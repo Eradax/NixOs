@@ -73,7 +73,7 @@ in {
         };
       };
       profiles = rec {
-        upidapi = {
+        eradax = {
           id = 0;
           name = config.home.username;
           search = {
@@ -286,7 +286,7 @@ in {
         };
 
         test =
-          upidapi
+          eradax
           // {
             id = 1;
             name = "test";

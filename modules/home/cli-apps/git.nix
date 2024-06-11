@@ -16,7 +16,7 @@ in {
     # might not what to hardcode this
     programs.git = {
       enable = true;
-      userName = "upidapi";
+      userName = "eradax";
       userEmail = "videw@icloud.com";
       extraConfig = {
         init.defaultBranch = "main";
