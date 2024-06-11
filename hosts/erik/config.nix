@@ -19,10 +19,10 @@ in {
     description = "eradax";
 
     extraGroups = ["networkmanager" "wheel" "libvirtd"];
-    hashedPassword = "$y$j9T$P.ANM.hAc1bqSR7fJWfkZ.$vUxY3KyPB65PR3uTBKwYCa7u6LvUquy47SeAPjgnjD9";
+    initialPassword = "1";
   };
 
-  users.users.root.hashedPassword = "$y$j9T$9xMPUcZ6FDsmUAHnIlyk80$8bJB3zlzCf3VsqAfpxaJ9qBhLiDq3syabSj1n/xUH41";
+  users.users.root.initialPassword = "1";
 
   modules.nixos = {
     host-name = "eradax-nix-laptop";
