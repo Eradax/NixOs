@@ -14,7 +14,7 @@ in {
   system.stateVersion = "23.11"; # Did you read the comment?
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.upidapi = {
+  users.users.eradax = {
     isNormalUser = true;
     description = "eradax";
 

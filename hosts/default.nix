@@ -28,7 +28,11 @@
         # only for testing
         # home.stateVersion = "23.11"
 
-        home.homeDirectory = "/home/${user-name}";
+        home.homeDirectory =
+          /*
+          lib.mkForce
+          */
+          "/home/${user-name}";
       }
 
       ./../modules/home
@@ -204,6 +208,10 @@ in {
     {
       system = "x86_64-linux";
       name = "laptop";
+    }
+    {
+      system = "x86_64-linux";
+      name = "erik";
     }
   ];
 }
