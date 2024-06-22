@@ -21,12 +21,14 @@ in {
     description = "upidapi";
 
     extraGroups = ["networkmanager" "wheel" "libvirtd"];
-    hashedPassword = "$y$j9T$EYMQdTmw82Nd2wnoDxrB10$OGquV37TGBUPTjhQAQ71xCMtmo3y0mnQiznUbME4UT3";
+    # hashedPassword = "$y$j9T$EYMQdTmw82Nd2wnoDxrB10$OGquV37TGBUPTjhQAQ71xCMtmo3y0mnQiznUbME4UT3";
+    hashedPassword = "$y$j9T$/ySHraNr8Gr9js0m4Tc9A1$8XoQXTOMhbr1sjkCos2WgckVEPu5hbHiCrq9XYJORP7";
 
     openssh.authorizedKeys.keys = with import ./../../other/ssh-keys.nix; [upidapi-nix-pc upidapi-nix-laptop];
   };
 
-  users.users.root.hashedPassword = "$y$j9T$kV/aEFz0la0QtThvK5Ghp1$oxghtnjsA0mSXrM62uY99l7ijDIN5tIFynkKhNcEOP0";
+  # users.users.root.hashedPassword = "$y$j9T$kV/aEFz0la0QtThvK5Ghp1$oxghtnjsA0mSXrM62uY99l7ijDIN5tIFynkKhNcEOP0";
+  users.users.root.hashedPassword = "$y$j9T$/ySHraNr8Gr9js0m4Tc9A1$8XoQXTOMhbr1sjkCos2WgckVEPu5hbHiCrq9XYJORP7";
 
   modules.nixos = {
     host-name = "upidapi-nix-pc";

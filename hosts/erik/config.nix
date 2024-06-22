@@ -25,7 +25,7 @@ in {
   users.users.root.initialPassword = "1";
 
   modules.nixos = {
-    host-name = "eradax-nix-laptop";
+    host-name = "eradax-laptop";
 
     suites.all = enable;
 

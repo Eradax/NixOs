@@ -312,8 +312,8 @@ class Steps:
     def push_changes():
         print_devider("Pushing code to github")
         # pat = "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"
-        # origin = f"https://{pat}@github.com/upidapi/NixOs.git"
-        origin = "git@github.com:upidapi/NixOs.git"
+        # origin = f"https://{pat}@github.com/Eradax/NixOs.git"
+        origin = "git@github.com:Eradax/NixOs.git"
 
         run_cmd(
             f"git push {origin} --all",
@@ -488,7 +488,7 @@ def main():
 
             run_cmd("git stash")
             run_cmd(
-                "git pull git@github.com:upidapi/NixOs.git main",
+                "git pull git@github.com:Eradax/NixOs.git main",
                 print_res=True,
                 color=True,
             )

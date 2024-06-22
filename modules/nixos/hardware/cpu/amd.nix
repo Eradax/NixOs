@@ -18,8 +18,8 @@ in {
     # Enable OpenGL00 (i think this is for integrated graphics)
     hardware.opengl = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      # driSupport = true;
+      # driSupport32Bit = true;
     };
   };
 }

@@ -63,7 +63,7 @@ in {
 
       hardware = {
         cpu.amd = enable;
-        gpu.nvidia = enable;
+        # gpu.nvidia = enable;
 
         bth = enable;
         sound = enable;
