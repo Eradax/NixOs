@@ -1,3 +1,9 @@
+This config is a soft fork of https://github.com/upidapi/NixOs so if something is weird, prob not my fault :)
+
+# upidapi's description
+---
+
+
 feel free to fork this if you want to use it as your own config
 
 # description
