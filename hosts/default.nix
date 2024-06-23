@@ -211,7 +211,7 @@ in {
     }
     {
       system = "x86_64-linux";
-      name = "erik";
+      name = "eradax";
     }
   ];
 }
