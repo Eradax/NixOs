@@ -58,7 +58,7 @@ in {
       };
 
       desktop = {
-        # sddm = enable;
+        sddm = enable;
         # disable sddm coz it doesn't work
       };
 

@@ -16,7 +16,8 @@ in {
       xserver = enable;
 
       displayManager.sddm = {
-        enable = true;
+        #enable = true;
+        #disable while not working
         # FIXME: (2024-04-07) enable this when it works
         #  currently, when enabled with 3+ monitors connected
         #  it causes systemd to freeze at
