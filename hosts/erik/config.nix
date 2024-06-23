@@ -19,10 +19,14 @@ in {
     description = "eradax";
 
     extraGroups = ["networkmanager" "wheel" "libvirtd"];
-    initialPassword = "1";
+    # initialPassword = "1";
+    hashedPassword = "$y$j9T$eN4aMyABUwlAe94/yFBri.$RNICgTSgxA/qEJ/LSY.S/vDxDFYruKWODx7sdtOqVIC";
+
+    openssh.authorizedKeys.keys = with import ./../../other/ssh-keys.nix; [eradax-laptop];
   };
 
-  users.users.root.initialPassword = "1";
+  # users.users.root.initialPassword = "1";
+  users.users.root.hashedPassword = "$y$j9T$7fnSc3epJcVjpC4tnTRM90$OCZo/oEFj.XBIt9.W2gl7NqYMWfzQG.pWJ2jielys86";
 
   modules.nixos = {
     host-name = "eradax-laptop";
