@@ -56,7 +56,7 @@
 
               # rev
               gdb
-              # TODO: gdb with gef
+              gef
               # EXPLORE: apktool and android rev in general
               ghidra
               radare2
@@ -75,10 +75,9 @@
               (python3.withPackages (
                 python-pkgs:
                   with python-pkgs; [
-                    pycrypto
-                    requests
-                    pwntools
-                    pillow
+                    pycrypto # crypto
+                    pwntools # pwn
+                    request # web
                   ]
               ))
             ]);
