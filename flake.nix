@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     # hyprland.url = "github:hyprwm/Hyprland?rev=9afdd61adeaf413afbe853dbc5fdf6853c8bde21";
@@ -21,7 +23,7 @@
     # 33.0 n
     # stable y
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # hyprland.url = "github:hyprwm/Hyprland?rev=3bb9c7c5cf4f2ee30bf821501499f2308d616f94";
     # "38.0" = "3875679755014997776e091ff8903acfb311dd2f";
     # "32.3" = "9afdd61adeaf413afbe853dbc5fdf6853c8bde21";
@@ -36,6 +38,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -55,10 +59,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ags = {
+      url = "github:Aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     impermanence.url = "github:nix-community/impermanence";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noshell = {
+      url = "github:viperML/noshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

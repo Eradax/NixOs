@@ -7,13 +7,9 @@ make sure that /persist/nixos has the correct perms
 https://github.com/EzequielRamis/dotfiles/blob/ecfe6f269339d1551768b9158c1d3aee2d82b238/home/timers.nix#L19
 
 
-# change user shell without root
-https://github.com/viperML/noshell
-
-# 
-
-
-possibly add pueued
+add pueued
+    ask lokegustafsson for his pkg
+    prevent freezes in low ram senarios
 
 
 Virtulisation
@@ -21,10 +17,26 @@ Virtulisation
     https://github.com/ChrisTitusTech/winutil
 
 
+prelockd
 
-shells 
-    nix develop?
-    nix shell?
+add nix sops
 
-    fhs shell for compatibility?
-        https://ryantm.github.io/nixpkgs/builders/special/fhs-environments/
+ricing (base16.nix and stylix)
+
+add a patches folder
+
+
+fully automated install
+    add a custom install iso
+
+    make shure that the install works
+
+    nixos-anywhere
+
+    https://github.com/EmergentMind/nix-config
+    https://www.youtube.com/watch?v=4snnV3hdz7g
+
+
+automated deployments? hydra?
+
+nixd (language server)

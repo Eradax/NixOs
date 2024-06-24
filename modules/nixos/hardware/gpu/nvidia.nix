@@ -14,11 +14,17 @@ in {
   config = mkIf cfg.enable {
     services.xserver.videoDrivers = ["nvidia"]; # this breaks stuff (cursor disappears)
 
-    # Enable OpenGL
-    hardware.opengl = {
+    environment.variables = {
+      WLR_NO_HARDWARE_CURSORS = "1";
+      LIBVA_DRIVER_NAME = "nvidia";
+      XDG_SESSION_TYPE = "wayland";
+      GBM_BACKEND = "nvidia-drm";
+      # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    };
+
+    hardware.graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
 
     hardware.nvidia = {

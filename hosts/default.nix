@@ -113,8 +113,6 @@
 
           modules =
             [
-              inputs.hyprland.nixosModules.default
-
               {
                 modules.nixos.system.nix.flakes.profile = name;
                 environment.sessionVariables = {

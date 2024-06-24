@@ -15,11 +15,9 @@ in {
     # todo: what is this?
     services.xserver.videoDrivers = ["modesetting"];
 
-    # Enable OpenGL00 (i think this is for integrated graphics)
-    hardware.opengl = {
+    hardware.graphics = {
       enable = true;
-      # driSupport = true;
-      # driSupport32Bit = true;
+      enable32Bit = true;
     };
   };
 }

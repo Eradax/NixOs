@@ -41,7 +41,8 @@ in {
         refreshRate = 60;
         x = 0;
         y = 0;
-        workspace = 2;
+        workspace = 1;
+        primary = true;
       }
     ];
   };
