@@ -41,6 +41,8 @@ in {
           };
 
           # make alt+ctrl type the keys that altgr would
+          # (fucks upp tty switching)
+          /*
           control = {
             alt = "layer(altgr)";
           };
@@ -48,6 +50,7 @@ in {
           alt = {
             control = "layer(altgr)";
           };
+          */
         };
       };
     };
