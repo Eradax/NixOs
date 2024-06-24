@@ -16,8 +16,22 @@ in {
     # might not what to hardcode this
     programs.git = {
       enable = true;
-      userName = "eradax";
-      userEmail = "videw@icloud.com";
+      userName = "Eradax";
+      userEmail = "erikadebahr@gmail.com";
+      # TODO: add
+      # - init.defaultBranch main
+      # [user]
+      #   - name = Eradax
+      #   - email = erikadebahr@gmail.com
+      #   - signingkey = ~/.ssh/id_ed25519.pub
+      # [core]
+      #   - editor = nvim
+      #   - excludesfile = ~/.gitignore
+
+      # EXPLORE: git
+      # - aliases
+      # - color
+
       extraConfig = {
         init.defaultBranch = "main";
         safe.directory = [

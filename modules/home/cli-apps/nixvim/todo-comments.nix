@@ -66,6 +66,12 @@
           "INFO"
         ];
       };
+      EXPLORE = {
+        icon = " ";
+        color = "#075E29";
+        alt = ["EXP"];
+      };
+
       /*
          TEST = {
         icon = "⏲ ";
