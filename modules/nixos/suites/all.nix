@@ -59,19 +59,19 @@ in {
       };
 
       desktop = {
-        sddm = enable;
+        # sddm = enable;
         # disable sddm coz it doesn't work
-        hyprland = enable;
+        # hyprland = enable;
       };
 
       hardware = {
-        cpu.amd = enable;
+        # cpu.amd = enable;
         # gpu.nvidia = enable;
 
         bth = enable;
         sound = enable;
         network = enable;
-        keyboard = enable;
+        # keyboard = enable;
       };
     };
   };
