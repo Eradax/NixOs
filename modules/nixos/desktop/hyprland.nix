@@ -17,9 +17,11 @@ in {
   ];
 
   config = mkIf cfg.enable {
+    # needed for battery on ags
+    services.upower.enable = true;
     # environment.variables.NIXOS_OZONE_WL = "1";
 
     # enable hyprland and required options
-    # programs.hyprland.enable = true;
+    programs.hyprland.enable = true;
   };
 }
