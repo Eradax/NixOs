@@ -34,22 +34,39 @@
               zsh
             '';
             targetPkgs = _pkgs: (with _pkgs; [
-              # gcc
+              # crypto
+              sageWithDoc
 
               # forensics
-              imhex # hex editor
-              audacity # audio foresics (and editor)
+              imhex
               binwalk
               file
-              ltrace
-              strace
+              audacity
+              gnuradio
+              wireshark
 
-              # binary decompilation
+              # hardware
+              tio
+
+              # pwn
+              # EXPLORE: formatStringExploiter
+              # EXPLORE: libformatstr
+              pwninit
+              checksec
+
+              # rev
+              gdb
+              # TODO: gdb with gef
+              # EXPLORE: apktool and android rev in general
               ghidra
               radare2
-              # TODO: binary ninja
 
-              sqlmap # sql injection
+              strace
+              ltrace
+
+              # web
+              # TODO: burp suite or opensource alt
+              sqlmap
 
               # for compatibility
               udev
