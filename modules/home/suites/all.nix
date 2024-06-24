@@ -54,8 +54,8 @@ in {
         hyprland = enable;
         addons = {
           swww = enable;
-          # eww = enable;
-          ags = enable;
+          eww = enable;
+          # ags = enable;
           dunst = enable;
           gtk = enable;
           rofi = enable;
