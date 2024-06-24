@@ -16,7 +16,7 @@ in {
       xserver = enable;
 
       displayManager.sddm = {
-        enable = true;
+        enable = false;
         #disable while not working
         # FIXME: (2024-04-07) enable this when it works
         #  currently, when enabled with 3+ monitors connected
