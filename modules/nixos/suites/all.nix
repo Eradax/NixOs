@@ -26,7 +26,7 @@ in {
       };
 
       apps = {
-        steam = enable;
+        # steam = enable;
       };
 
       system = {
