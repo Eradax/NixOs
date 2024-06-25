@@ -22,6 +22,9 @@ in {
       delta = {
         enable = true;
         options = {
+          navigate = true;
+          dark = true;
+          line-numbers = true;
         };
       };
 
@@ -39,6 +42,7 @@ in {
           "${osConfig.modules.nixos.system.nix.cfg-path}/.git" # this is here coz /persist/nixos/ isn't owned by us
         ];
         merge.conflictstyle = "diff3";
+        diff.colorMoved = "default";
         fetch.prune = true;
         apply.whitespace = "fix";
         # TODO: add or make it into an option: commit.template = "~/.gitmessage";
