@@ -29,11 +29,7 @@ in {
         core = {
           editor = "nvim";
           eol = "lf";
-          whitespace = [
-            "space-before-tab"
-            "-indent-with-non-tab"
-            "trailing-space"
-          ];
+          whitespace = "space-before-tab,trailing-space";
         };
         init = {
           defaultBranch = "main";
