@@ -13,33 +13,61 @@ in {
     mkEnableOpt "Whether or not to add git";
 
   config = mkIf cfg.enable {
-    # might not what to hardcode this
     programs.git = {
       enable = true;
+      # FIX: go from SSH to GPG keys
+      aliases = {
+        # add all git aliases here
+      };
+      delta = {
+        enable = true;
+        options = {
+        };
+      };
+
+      extraConfig = {
+        core = {
+          editor = "nvim";
+          eol = "lf";
+          whitespace = [
+            "space-before-tab"
+            "-indent-with-non-tab"
+            "trailing-space"
+          ];
+        };
+        init = {
+          defaultBranch = "main";
+        };
+        safe.directory = [
+          "${osConfig.modules.nixos.system.nix.cfg-path}" # this is here coz /persist/nixos/ isn't owned by us
+          "${osConfig.modules.nixos.system.nix.cfg-path}/.git" # this is here coz /persist/nixos/ isn't owned by us
+        ];
+        merge.conflictstyle = "diff3";
+        fetch.prune = true;
+        apply.whitespace = "fix";
+        # TODO: add or make it into an option: commit.template = "~/.gitmessage";
+        gpg.format = "ssh"; # FIXME: use gpg instead of ssh, and an agent
+      };
+
+      signing = {
+        key = "~/.ssh/id_ed25519.pub";
+        signByDefault = true;
+      };
+
+      ignores = [
+      ];
+
+      attributes = [
+      ];
+
       userName = "Eradax";
       userEmail = "erikadebahr@gmail.com";
-      # TODO: add
-      # - init.defaultBranch main
-      # [user]
-      #   - name = Eradax
-      #   - email = erikadebahr@gmail.com
-      #   - signingkey = ~/.ssh/id_ed25519.pub
-      # [core]
-      #   - editor = nvim
-      #   - excludesfile = ~/.gitignore
 
       # EXPLORE: git
       # - aliases
       # - color
-
-      extraConfig = {
-        init.defaultBranch = "main";
-        safe.directory = [
-          "${osConfig.modules.nixos.system.nix.cfg-path}"
-          "${osConfig.modules.nixos.system.nix.cfg-path}/.git"
-        ];
-        pull.rebase = "false";
-      };
+      # - url
+      # - lfs
     };
   };
 }
