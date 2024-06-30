@@ -35,7 +35,7 @@
             '';
             targetPkgs = _pkgs: (with _pkgs; [
               # crypto
-              sageWithDoc
+              sage
 
               # forensics
               imhex
