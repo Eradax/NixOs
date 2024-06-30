@@ -77,7 +77,7 @@
                   with python-pkgs; [
                     pycrypto # crypto
                     pwntools # pwn
-                    request # web
+                    requests # web
                   ]
               ))
             ]);

@@ -32,5 +32,9 @@ in {
     # virtualisation
     virtualisation.libvirtd.enable = true;
     programs.virt-manager.enable = true;
+
+    # docker
+    virtualisation.docker.enable = true;
+    virtualisation.docker.storageDriver = "btrfs";
   };
 }

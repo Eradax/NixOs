@@ -18,7 +18,7 @@ in {
     isNormalUser = true;
     description = "eradax";
 
-    extraGroups = ["networkmanager" "wheel" "libvirtd"];
+    extraGroups = ["networkmanager" "wheel" "libvirtd" "docker"];
     # initialPassword = "1";
     hashedPassword = "$y$j9T$eN4aMyABUwlAe94/yFBri.$RNICgTSgxA/qEJ/LSY.S/vDxDFYruKWODx7sdtOqVIC";
 
