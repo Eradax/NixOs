@@ -47,6 +47,7 @@ in {
           l1 = "tree -L 1";
           l2 = "tree -L 2";
           l3 = "tree -L 3";
+          l4 = "tree -L 4";
         };
 
         # dotDir = "./config/zsh";
