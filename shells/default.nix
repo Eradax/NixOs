@@ -21,6 +21,25 @@
         '';
       };
 
+      ai = pkgs.mkShell {
+        packages = [
+          (
+            pkgs.python3.withPackages (
+              py-pkgs:
+                with py-pkgs; [
+                  torch
+                  torchvision
+                ]
+            )
+          )
+        ];
+
+        shellHook = ''
+          zsh
+          exit
+        '';
+      };
+
       sec =
         # https://www.alexghr.me/blog/til-nix-flake-fhs/
         # https://ryantm.github.io/nixpkgs/builders/special/fhs-environments/
