@@ -73,12 +73,14 @@ in {
           method = "symlink";
         }
         */
+
+        ".ssh"
       ];
       files = [
         # save zsh command history
         ".zsh/history"
 
-        ".ssh/known_hosts"
+        # ".ssh/known_hosts"
         ".screenrc"
         # ".zsh_history"  # zsh command history
       ];

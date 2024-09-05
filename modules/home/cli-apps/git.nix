@@ -2,7 +2,6 @@
   osConfig,
   config,
   lib,
-  keys,
   my_lib,
   ...
 }: let
@@ -13,15 +12,13 @@ in {
   options.modules.home.cli-apps.git =
     mkEnableOpt "Whether or not to add git";
 
-  # TODO: go from SSH to GPG keys?
   config = mkIf cfg.enable {
     programs.git = {
       enable = true;
-
+      # FIX: go from SSH to GPG keys
       aliases = {
         # add all git aliases here
       };
-
       delta = {
         enable = true;
         options = {
@@ -37,41 +34,23 @@ in {
           eol = "lf";
           whitespace = "space-before-tab,trailing-space";
         };
-
         init = {
           defaultBranch = "main";
         };
-
         safe.directory = [
-          # this is here coz /persist/nixos/ isn't owned by us
-          # and that makes git angry
-          "${osConfig.modules.nixos.nix.cfg-path}"
-          "${osConfig.modules.nixos.nix.cfg-path}/.git"
+          "${osConfig.modules.nixos.nix.cfg-path}" # this is here coz /persist/nixos/ isn't owned by us
+          "${osConfig.modules.nixos.nix.cfg-path}/.git" # this is here coz /persist/nixos/ isn't owned by us
         ];
-
         merge.conflictstyle = "diff3";
         diff.colorMoved = "default";
         fetch.prune = true;
         apply.whitespace = "fix";
         # TODO: add or make it into an option: commit.template = "~/.gitmessage";
-        gpg = {
-          format = "ssh";
-          /*
-          ssh.defaultKeyCommand = let
-            p_key = config.local.keys.gerg_gerg-desktop;
-          in
-            pkgs.writeShellScript "git_key" ''
-              if ssh-add -L | grep -vq '${p_key}'; then
-                ssh-add -t 1m ~/.ssh/id_ed25519
-              fi
-              echo 'key::${p_key}'
-            '';
-          */
-        };
+        gpg.format = "ssh"; # FIXME: use gpg instead of ssh, and an agent
       };
 
       signing = {
-        key = keys.users."${config.home.username}";
+        key = "~/.ssh/id_ed25519.pub";
         signByDefault = true;
       };
 
@@ -81,8 +60,8 @@ in {
       attributes = [
       ];
 
-      userName = "upidapi";
-      userEmail = "videw@icloud.com";
+      userName = "Eradax";
+      userEmail = "erikadebahr@gmail.com";
 
       # EXPLORE: git
       # - aliases

@@ -23,7 +23,7 @@
 
   initialSession = {
     # TODO: make this configurable
-    user = "upidapi"; # "${sys.mainUser}";
+    user = "eradax"; # "${sys.mainUser}";
     command = "Hyprland"; # "${env.desktop}";
   };
 

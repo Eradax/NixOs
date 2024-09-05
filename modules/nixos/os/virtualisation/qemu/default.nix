@@ -71,7 +71,7 @@ in {
 
     systemd.tmpfiles.rules = [
       # TODO: generalise
-      "f /dev/shm/looking-glass 0660 upidapi kvm -"
+      "f /dev/shm/looking-glass 0660 eradax kvm -"
     ];
 
     # referance

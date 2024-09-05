@@ -30,7 +30,7 @@ env SOPS_AGE_KEY_FILE=/persist/sops-nix-key.txt sops secrets/infra.yaml
     
 # open the (infra) sops file
 ```bash
-cd "$NIXOS_CONFIG_PATH"; su --preserve-environment -c "
+cd "$NIXOS_CONFIG_PATH"; su --preserv   e-environment -c "
 env SOPS_AGE_KEY_FILE=/persist/sops-nix-key.txt sops secrets/infra.yaml"
 ```
 >>>>>>> Stashed changes

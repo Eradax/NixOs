@@ -7,6 +7,8 @@
     upidapi = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHAZGOYHhwBexxezYimuNmPqU2nh5dyJrmJLRvE3Nm/B upidapi@upidapi-nix-pc";
 
     admin = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK0MLLzh+8UzScYKSVSN0j0su890AhlfWNz8Lz3lQ0tl admin";
+
+    eradax = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK/yw30FU+G07WduzsZCsPKbi2wYrdgRaHFMZ3ccunaK eradax@eradax-laptop";
   };
 
   # Hosts
@@ -25,6 +27,7 @@
   workstations = filterAttrsList machines [
     "upinix-pc"
     "upinix-laptop"
+    "eradax-laptop"
   ];
   # all = (attrValues users) ++ (attrValues machines);
 in {

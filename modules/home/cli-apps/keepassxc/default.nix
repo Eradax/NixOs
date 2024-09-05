@@ -21,7 +21,7 @@ in {
       enable = true;
       browserIntegration.firefox = true;
 
-      defaultDatabase = "/home/upidapi/persist/keepass-db.kdbx";
+      defaultDatabase = "/home/eradax/persist/keepass-db.kdbx";
 
       settings = {
         General = {

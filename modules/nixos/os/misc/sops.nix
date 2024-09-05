@@ -90,7 +90,7 @@ in {
               };
             })
             # when you add new users add them here
-            ["upidapi"]
+            ["eradax"]
           )
         );
     };
