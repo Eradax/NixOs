@@ -63,6 +63,7 @@ in {
       userName = "Eradax";
       userEmail = "erikadebahr@gmail.com";
 
+      # TODO: Add merge conflict handling with eg. rebase
       # EXPLORE: git
       # - aliases
       # - color

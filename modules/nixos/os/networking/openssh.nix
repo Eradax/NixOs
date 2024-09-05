@@ -13,7 +13,7 @@ in {
     mkEnableOpt "enable openssh to allow for remote ssh connections";
 
   # TODO: setup aliases with domains
-  #  eg ${host-name}.upidapi.com
+  #  eg ${host-name}.eradax.com
   config = mkIf cfg.enable {
     programs.ssh = {
       # ship github/gitlab/sourcehut host keys to avoid MiM (man in the middle) attacks

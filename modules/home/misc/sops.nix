@@ -40,7 +40,7 @@ in {
           format = "binary";
         };
 
-        upidapi-nix-pc = {
+        eradax-nix-pc = {
           path = "${ssh-cfg-path}/id_ed25519";
           mode = "0400";
           sopsFile =

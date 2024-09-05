@@ -50,7 +50,7 @@ in {
 
     # we persist everything relative under /persist/system eg.
     # /etc/ssh => /persist/system/etc/ssh
-    # /home/upidapi/.ssh => /persist/system/home/upidapi/.ssh
+    # /home/eradax/.ssh => /persist/system/home/eradax/.ssh
 
     # disko can't / won't automatically create the storage locations
     # so we have to create them ourselves (they might have chagned this)

@@ -10,9 +10,10 @@ bool
 bootstrap
 bth
 programing
-attrsets 
-filesystems 
-nvf 
+attrsets
+eradax
+filesystems
+nvf
 powerd
 manpages 
 manpage 
@@ -26,7 +27,7 @@ perma
 chmod 
 prog 
 zfs
-iommu 
+ommu 
 amd 
 intel 
 pci 

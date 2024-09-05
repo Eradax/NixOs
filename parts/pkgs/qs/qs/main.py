@@ -321,7 +321,7 @@ class Steps:
     @staticmethod
     def push_changes():
         print_devider("Pushing code to github")
-        origin = "git@github.com:upidapi/NixOs.git"
+        origin = "git@github.com:Eradax/NixOs.git"
 
         run_cmd(
             f"git push {origin} --all",
@@ -503,7 +503,7 @@ def main():
 
             run_cmd("git stash")
             run_cmd(
-                "git pull git@github.com:upidapi/NixOs.git main",
+                "git pull git@github.com:Eradax/NixOs.git main",
                 print_res=True,
                 color=True,
             )
