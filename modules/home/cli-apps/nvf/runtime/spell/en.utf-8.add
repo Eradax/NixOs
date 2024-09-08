@@ -27,7 +27,7 @@ perma
 chmod 
 prog 
 zfs
-ommu 
+iommu 
 amd 
 intel 
 pci 
