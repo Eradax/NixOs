@@ -34,24 +34,25 @@ in {
       #    extensions/
       #    tools/
       cli-apps = {
-        direnv = enable;
         keepassxc = enable;
         # nixvim = enable;
-        nvf = enable;
-        eza = enable;
         # nushell = enable;
-        tmux = enable;
+        nvf = enable;
         bat = enable;
-        gpg = enable;
         cn-bth = enable;
+        direnv = enable;
+        eza = enable;
+        git = enable;
+        gpg = enable;
+        nix-index = enable;
+        pandoc = enable;
+        ssh = enable;
+        tmux = enable;
+        wine = enable;
         zsh = {
           enable = true;
           set-shell = true;
         };
-        wine = enable;
-        git = enable;
-        ssh = enable;
-        nix-index = enable;
       };
 
       services = {
