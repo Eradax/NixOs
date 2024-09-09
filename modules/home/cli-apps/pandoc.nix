@@ -12,7 +12,6 @@ in {
     mkEnableOpt "enable pandoc";
 
   config = mkIf cfg.enable {
-    # might not what to hardcode this
     programs.pandoc = enable;
   };
 }
