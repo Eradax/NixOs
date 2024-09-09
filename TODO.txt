@@ -9,20 +9,19 @@ nix
     automated deployments? 
         hydra?
 
-    posibly change my_lib to lib.c (or smt similar)
+    possibly change my_lib to lib.c (or some thing similar)
 
     Index the nixos server for better searching
         https://github.com/Tyrrrz/DiscordChatExporter?tab=readme-
 
-
-Virtulisation
+Virtualization
     MAS
         free windows keys
         https://github.com/massgravel/Microsoft-Activation-Scripts
     
     https://github.com/ChrisTitusTech/winutil
 
-    Gpu passthrugh 
+    Gpu passthrough 
         https://discord.com/channels/568306982717751326/1257693396173328468/1257701485568065557
     
     scripts to auto setup vm
