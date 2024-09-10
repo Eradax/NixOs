@@ -20,10 +20,11 @@ in {
       other = enable;
 
       apps = {
-        alacritty = enable;
-        # bitwarden = enable;
         discord = enable;
+        alacritty = enable;
         firefox = enable;
+        # bitwarden = enable;
+        inkscape = enable;
         r2modman = enable;
         spotify = enable;
       };

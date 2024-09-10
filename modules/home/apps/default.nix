@@ -1,10 +1,11 @@
 {
   imports = [
-    ./firefox
-    ./r2modman.nix
     ./discord
-    ./bitwarden.nix
+    ./firefox
     ./alacritty.nix
+    ./bitwarden.nix
+    ./inkscape.nix
+    ./r2modman.nix
     ./spotify.nix
   ];
 }
