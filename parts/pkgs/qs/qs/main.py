@@ -29,6 +29,7 @@ def run_cmd(
         stdout=subprocess.PIPE,
     )
 
+    
     res = ""
     for line in iter(process.stdout.readline, b""):  # type: ignore[attr-defined]
         dec = line.decode()
@@ -43,6 +44,7 @@ def run_cmd(
                 dec,
                 end="",
             )
+    
 
     return res
 

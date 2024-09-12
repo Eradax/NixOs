@@ -205,6 +205,8 @@ in {
             };
           };
           extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+            refined-github
+
             # bitwarden  # security problem
 
             # floccus  # syncs bookmarks
