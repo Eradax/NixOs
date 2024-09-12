@@ -205,25 +205,27 @@ in {
             };
           };
           extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
-            refined-github
-
             # bitwarden  # security problem
 
             # floccus  # syncs bookmarks
             # languagetool
 
+            # vim binds for the browser
             vimium
 
             ublock-origin
 
             # un clickbait youtube
             dearrow
+            sponsorblock
+            return-youtube-dislikes
+
+            # qol
+            refined-github
+            i-dont-care-about-cookies
+            darkreader
 
             react-devtools
-
-            i-dont-care-about-cookies
-
-            darkreader
 
             stylus # the config is in stylus.json
 
@@ -238,9 +240,6 @@ in {
             # privacy-redirect
 
             buster-captcha-solver
-
-            sponsorblock
-            return-youtube-dislikes
           ];
 
           settings = {
