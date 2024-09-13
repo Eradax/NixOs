@@ -21,13 +21,15 @@ in {
 
     extraGroups = ["networkmanager" "wheel" "libvirtd" "docker"];
     # initialPassword = "1";
-    hashedPassword = "$y$j9T$eN4aMyABUwlAe94/yFBri.$RNICgTSgxA/qEJ/LSY.S/vDxDFYruKWODx7sdtOqVIC";
+    # mkpasswd
+
+    hashedPassword = "$y$j9T$d5vQf2yRUxO.fcgKRGkEh1$vgTjwslFwi6.tytTOtd/2uh7eZnXMhzHYbBAALeQM15";
 
     openssh.authorizedKeys.keys = [keys.users.eradax];
   };
 
   # users.users.root.initialPassword = "1";
-  users.users.root.hashedPassword = "$y$j9T$7fnSc3epJcVjpC4tnTRM90$OCZo/oEFj.XBIt9.W2gl7NqYMWfzQG.pWJ2jielys86";
+  users.users.root.hashedPassword = "$y$j9T$d5vQf2yRUxO.fcgKRGkEh1$vgTjwslFwi6.tytTOtd/2uh7eZnXMhzHYbBAALeQM15";
 
   modules.nixos = {
     suites.all = enable;
