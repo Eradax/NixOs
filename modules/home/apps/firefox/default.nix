@@ -316,10 +316,10 @@ in {
 
             "browser.newtabpage.activity-stream.feeds.topsites" = true;
             "browser.newtabpage.pinned" = [
-              {url = "https://www.youtube.com/";}
+              {url = "https://yewtu.be/";}
               {url = "https://github.com/";}
               {url = "https://noogle.dev/";}
-              {url = "https://www.netflix.com/browse";}
+              {url = "https://search.nixos.org/packages";}
               {url = "https://www.samskolan.se/login/";}
             ];
           };
