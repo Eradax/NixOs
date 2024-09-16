@@ -94,7 +94,6 @@
                     requests
                     pwntools
                     pillow
-                    sqlmap
                   ]
               ))
             ]);
