@@ -11,9 +11,10 @@
   cfg = config.modules.home.desktop.hyprland;
 in {
   imports = [
-    ./config.nix
     ./binds.nix
+    ./config.nix
     ./monitors.nix
+    ./submaps.nix
     inputs.hyprland.homeManagerModules.default
   ];
 
