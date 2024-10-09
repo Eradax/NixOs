@@ -45,5 +45,5 @@ for mod in modules:
             fixed += line + "\n"
 
     with open(mod, "w") as f:
-        f.write(fixed)
+        _ = f.write(fixed)
 
