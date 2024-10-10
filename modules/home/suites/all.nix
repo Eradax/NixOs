@@ -21,8 +21,9 @@ in {
 
       apps = {
         discord = enable;
-        alacritty = enable;
         firefox = enable;
+        alacritty = enable;
+        anki = enable;
         bitwarden = enable;
         inkscape = enable;
         r2modman = enable;
