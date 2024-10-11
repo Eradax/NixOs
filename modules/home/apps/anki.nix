@@ -12,8 +12,18 @@ in {
   options.modules.home.apps.anki = mkEnableOpt "Whether or not to enable anki.";
 
   config = mkIf cfg.enable {
-    home.packages = [
-      pkgs.anki
+    home.packages = let
+      anki = pkgs.symlinkJoin {
+        name = "anki";
+        paths = [pkgs.anki];
+        buildInputs = [pkgs.makeWrapper];
+        postBuild = ''
+          wrapProgram $out/bin/anki \
+            --add-flags "-b ~/persist/anki/data"
+        '';
+      };
+    in [
+      anki
     ];
   };
 }
