@@ -28,6 +28,7 @@ in {
     ];
     */
 
+    /*
     home.packages = [
       (pkgs.symlinkJoin {
         name = "anki";
@@ -38,6 +39,25 @@ in {
             --add-flags "-b ~/persist/anki/data"
         '';
       })
+    ];
+    */
+
+    home.packages = [
+      (pkgs.runCommand
+        "anki"
+        {
+          buildInputs = [pkgs.makeWrapper];
+        }
+        ''
+          mkdir $out
+          ln -s ${pkgs.anki}/* $out
+          rm $out/bin
+          mkdir $out/bin
+          ln -s ${pkgs.anki}/bin/* $out/bin
+          rm $out/bin/anki
+          makeWrapper ${pkgs.anki}/bin/anki $out/bin/anki \
+            --add-flags "-b ~/persist/anki/data/"
+        '')
     ];
   };
 }
