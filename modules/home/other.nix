@@ -34,7 +34,7 @@ in {
 
     home.packages =
       [
-        # used to formatt nix code
+        # used to format nix code
         inputs.alejandra.defaultPackage.${pkgs.system}
         self'.packages.dev-shell
         self'.packages.qs
@@ -91,6 +91,9 @@ in {
 
         # psw mgr
         keepassxc
+
+        # hehe
+        sl
       ]);
   };
 }
