@@ -42,6 +42,7 @@ in {
     ];
     */
 
+    /*
     home.packages = [
       (pkgs.runCommand
         "anki"
@@ -58,6 +59,20 @@ in {
           makeWrapper ${pkgs.anki}/bin/anki $out/bin/anki \
             --add-flags "-b ~/persist/anki/data/"
         '')
+    ];
+    */
+
+    home.packages = [
+      (pkgs.anki.overrideAttrs (oldAttrs: {
+        buildInputs = oldAttrs.buildInputs or [] ++ [pkgs.makeWrapper];
+        postInstall =
+          oldAttrs.postInstall
+          or ""
+          + ''
+            wrapProgram $out/bin/anki \
+              --add-flags "-t"
+          '';
+      }))
     ];
   };
 }
