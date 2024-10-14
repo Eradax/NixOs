@@ -70,7 +70,7 @@ in {
           or ""
           + ''
             wrapProgram $out/bin/anki \
-              --add-flags "-t"
+              --add-flags "-b ~/persist/anki/data"
           '';
       }))
     ];
