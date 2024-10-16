@@ -19,6 +19,7 @@ in {
   config = mkIf cfg.enable {
     home.packages = [
       (pkgs.writeShellScriptBin "cn-bth" ''
+        bluetoothctl power on
         bluetoothctl connect 94:DB:56:DB:79:78
       '')
     ];
