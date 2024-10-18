@@ -76,9 +76,10 @@ in {
         mkScreenshotBind = let
           # date = "$(date -Iseconds)";
           date = ''$(date "+%d/%m@%H:%M:%S")'';
+          imgDir = "~/screenshots";
         in
           mods: cmd: [
-            "${mods}, PRINT, exec, mkdir -p ~/screenshots; grimblast --notify --freeze copysave ${cmd} ~/images/${date}.png"
+            "${mods}, PRINT, exec, mkdir -p ${imgDir}; grimblast --notify --freeze copysave ${cmd} ${imgDir}/${date}.png"
           ];
       in
         [
@@ -92,6 +93,8 @@ in {
 
           "$mod, U, togglefloating"
           "$mod, I, fullscreen, 0" # entire display
+
+          "$mod, P, exec, clr-pckr" # TODO: Make this similar to the other screenshot binds
         ]
         ++ (mkArrowBind "" "movefocus")
         ++ (mkArrowBind "CTRL" "movewindow")
