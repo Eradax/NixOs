@@ -1,5 +1,6 @@
 {
   imports = [
+    ./clr-pckr
     ./keepassxc
     ./nixvim
     ./nushell

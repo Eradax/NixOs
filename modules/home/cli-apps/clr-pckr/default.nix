@@ -7,14 +7,11 @@
 }: let
   inherit (lib) mkIf;
   inherit (my_lib.opt) mkEnableOpt;
-  cfg = config.modules.home.cli-apps.cn-bth;
+  cfg = config.modules.home.cli-apps.clr-pckr;
 in {
-  options.modules.home.cli-apps.cn-bth =
+  options.modules.home.cli-apps.clr-pckr =
     mkEnableOpt
-    "Whether or not to add the cn-bth command";
-
-  # TODO: auto connect to bth?
-  #  https://github.com/EzequielRamis/dotfiles/blob/ecfe6f269339d1551768b9158c1d3aee2d82b238/home/timers.nix#L19
+    "Whether or not to add the clr-pckr command";
 
   config = mkIf cfg.enable {
     home.packages = [

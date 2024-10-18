@@ -36,6 +36,7 @@ in {
       #    extensions/
       #    tools/
       cli-apps = {
+        clr-pckr = enable;
         keepassxc = enable;
         # nixvim = enable;
         # nushell = enable;
