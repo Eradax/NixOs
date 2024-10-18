@@ -5,7 +5,7 @@ in {
     settings = {
       "$mod" = "SUPER";
 
-      # flags
+      # bind flags
       /*
       l -> locked, will also work when an input inhibitor (e.g. a
       lockscreen) is active.
@@ -64,7 +64,7 @@ in {
         ];
 
       # kbd binds
-      # NOTE: Submaps are below since you have to use extraConfig at the moment
+      # NOTE: Submaps are ./submaps.nix since you have to use extraConfig at the moment
       bind = let
         mkArrowBind = mods: cmd: [
           "$mod ${mods}, H, ${cmd}, l"
@@ -72,9 +72,16 @@ in {
           "$mod ${mods}, K, ${cmd}, u"
           "$mod ${mods}, J, ${cmd}, d"
         ];
+
+        mkScreenshotBind = let
+          # date = "$(date -Iseconds)";
+          date = ''$(date "+%d/%m@%H:%M:%S")'';
+        in
+          mods: cmd: [
+            "${mods}, PRINT, exec, mkdir -p ~/screenshots; grimblast --notify --freeze copysave ${cmd} ~/images/${date}.png"
+          ];
       in
         [
-          # "$mod, Q, exec, kitty"
           "$mod, S, exec, $TERMINAL"
           "$mod, D, exec, rofi -show drun"
           "$mod, F, exec, $BROWSER"
@@ -85,16 +92,13 @@ in {
 
           "$mod, U, togglefloating"
           "$mod, I, fullscreen, 0" # entire display
-
-          # screen shot
-          ",Print , exec, grim -g \"$(slurp -w 0)\" - | wl-copy"
-
-          # "$mod, F, exec, firefox"
-          # ", Print, exec, grimblast copy area"
         ]
         ++ (mkArrowBind "" "movefocus")
         ++ (mkArrowBind "CTRL" "movewindow")
         ++ (mkArrowBind "SHIFT" "swapwindow")
+        ++ (mkScreenshotBind "" "area")
+        ++ (mkScreenshotBind "CTRL" "screen")
+        ++ (mkScreenshotBind "SHIFT" "output")
         ++ (
           builtins.concatLists (
             builtins.genList (
