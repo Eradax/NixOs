@@ -79,7 +79,7 @@ in {
           imgDir = "~/screenshots";
         in
           mods: cmd: [
-            "${mods}, PRINT, exec, mkdir -p ${imgDir}; grimblast --notify --freeze copysave ${cmd} ${imgDir}/${date}.png"
+            ''${mods}, PRINT, exec, mkdir -p ${imgDir}; grimblast --notify --freeze copysave ${cmd} "${imgDir}/${date}.png"''
           ];
       in
         [
