@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg
+   version="1.1"
+   width="500"
+   height="500"
+   viewBox="0 0 500 500"
+   xmlns="http://www.w3.org/2000/svg">
+  <path
+     fill="#000000"
+     fill-rule="nonzero"
+     transform="translate(75.582885,9.999392) matrix(4.16667,0,0,4.16667,-552.31941,-760)"
+     d="m 134.81666,300 c -13.6,0 -20.4,-6.8 -20.4,-20.4 v -79.2 c 0,-13.6 6.8,-20.4 20.4,-20.4 h 79.2 c 13.6,0 20.4,6.8 20.4,20.4 v 79.2 c 0,13.6 -6.8,20.4 -20.4,20.4 z" />
+</svg>
+
