@@ -75,7 +75,7 @@ in {
 
         mkScreenshotBind = let
           # date = "$(date -Iseconds)";
-          date = ''$(date "+%d/%m@%H:%M:%S")'';
+          date = ''$(date "+%d\/%m@%H:%M:%S")'';
           imgDir = "~/screenshots";
         in
           mods: cmd: [
