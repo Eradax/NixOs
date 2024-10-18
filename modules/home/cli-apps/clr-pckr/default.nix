@@ -24,6 +24,7 @@ in {
         fi
 
         wl-copy "$color"
+        echo "$color"
 
         # Generated with https://interfacecraft.online/squircle-svg-generator/
         # However it is far from perfect so I have also made som manual changes
