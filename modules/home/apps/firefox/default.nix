@@ -196,6 +196,10 @@ in {
                 mkGithubSearch ["@ghm" "@ghhomemanager"]
                 "repo:nix-community/home-manager lang:nix";
 
+              "Github Upidapi Nixos" =
+                mkGithubSearch ["@gun" "@ghupidapinixos"]
+                "repo:upidapi/NixOs";
+
               # "Wikipedia (en)".metaData.alias = "@wiki";
               # "Google".metaData.hidden = true;
               "Google".metaData.hidden = true;
