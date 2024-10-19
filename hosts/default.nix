@@ -36,6 +36,7 @@
   inherit (mkHosts) foldMapSystems mkSystem;
 in {
   flake.nixosConfigurations = foldMapSystems mkSystem [
+    /*
     {
       system = "x86_64-linux";
       name = "upinix-pc";
@@ -44,6 +45,7 @@ in {
       system = "x86_64-linux";
       name = "upinix-laptop";
     }
+    */
     {
       system = "x86_64-linux";
       name = "eradax-laptop";

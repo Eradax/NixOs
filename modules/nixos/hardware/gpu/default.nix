@@ -1,5 +1,5 @@
 {
   imports = [
-    ./nvidia.nix
+    # ./nvidia.nix # TODO: I don't use nvidia so this should go
   ];
 }
