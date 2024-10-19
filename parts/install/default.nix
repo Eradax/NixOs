@@ -11,7 +11,7 @@
       (builtins.readFile ./install-waizard.py);
   in {
     # you can run the installer (run install.sh) with the following command
-    # nix --experimental-features "nix-command flakes" run github:upidapi/nixos#install-wizard
+    # nix --experimental-features "nix-command flakes" run github:eradax/nixos#install-wizard
     # you can add args by adding -- before them
 
     apps.install-wizard = {

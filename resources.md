@@ -77,7 +77,7 @@ downloadOfficialIso plasma6
 # get logs
 ```bash
 systemctl --user status 
-journalctl -xeu home-manager-upidapi.service
+journalctl -xeu home-manager-eradax.service
 ```
 
 
@@ -95,25 +95,25 @@ journalctl -xeu home-manager-upidapi.service
 # get logs
 ```bash
 systemctl --user status 
-journalctl -xeu home-manager-upidapi.service
+journalctl -xeu home-manager-eradax.service
 ```
 
 # get logs
 ```bash
 systemctl --user status 
-journalctl -xeu home-manager-upidapi.service
+journalctl -xeu home-manager-eradax.service
 ```
 
 # get logs
 ```bash
 systemctl --user status 
-journalctl -xeu home-manager-upidapi.service
+journalctl -xeu home-manager-eradax.service
 ```
 
 # get logs
 ```bash
 systemctl --user status 
-journalctl -xeu home-manager-upidapi.service
+journalctl -xeu home-manager-eradax.service
 ```
 
 

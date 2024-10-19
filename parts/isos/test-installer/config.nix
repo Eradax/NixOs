@@ -25,7 +25,7 @@ in {
       file = pkgs.writers.writeBash "install_script" ''
         nix run \
           --extra-experimental-features "flakes nix-command" \
-          github:upidapi/nixos#install
+          github:eradax/nixos#install
       '';
     in {
       description = "installs my nixos config";

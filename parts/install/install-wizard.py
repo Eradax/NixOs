@@ -268,7 +268,7 @@ def main():
 
     # we can't put this directly into /mnt/persist/nixos
     # since /mnt gets wiped when reformatting the disk with disko
-    run_cmd("git clone https://github.com/upidapi/NixOs /tmp/nixos")
+    run_cmd("git clone https://github.com/eradax/NixOs /tmp/nixos")
 
 
     profiles = next(os.walk("/tmp/nixos/hosts"))[1]

@@ -17,14 +17,14 @@ in {
   ];
 
   config = {
-    users.users.upidapi = {
+    users.users.eradax = {
       isNormalUser = true;
-      description = "upidapi";
+      description = "eradax";
 
       extraGroups = ["networkmanager" "wheel" "libvirtd"];
-      hashedPassword = "$y$j9T$P.ANM.hAc1bqSR7fJWfkZ.$vUxY3KyPB65PR3uTBKwYCa7u6LvUquy47SeAPjgnjD9";
+      hashedPassword = "$y$j9T$0UbmymXnVP28DBFRi9PwD.$9PfNR/W2/viUhOQ8BKhADUJt.MZTPhRCuni6ufk1S/0"; # password = 0
 
-      openssh.authorizedKeys.keys = [keys.users.upidapi];
+      openssh.authorizedKeys.keys = [keys.users.eradax];
     };
 
     networking.wireless.enable = false;

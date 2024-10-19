@@ -15,7 +15,7 @@ chmod +x nix-portable
 ln -s nix-portable nix
 
 ./nix-portable nix-shell -p home-manager nix zsh
-home-manager switch -b old --flake "github:upidapi/NixOs#$username"
+home-manager switch -b old --flake "github:eradax/NixOs#$username"
 zsh
 
 # for some reason yo have to use "zsh $(which --cmd--)" to run a command that uses exec
