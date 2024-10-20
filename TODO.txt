@@ -21,25 +21,25 @@ Virtualization
     
     https://github.com/ChrisTitusTech/winutil
 
-    Gpu passthrough 
+    Gpu Passthrough 
         https://discord.com/channels/568306982717751326/1257693396173328468/1257701485568065557
     
-    scripts to auto setup vm
+    scripts to auto setup VMs
 
 
 Home lab
-    nas
+    NAS
         local share?
 
     backups
         syncthing
 
     file sync
-        bord / restic
+        Bord / restic
 
-    vpn
+    VPNs
 
-    plex
+    Plex
 
 
 nvim 
@@ -63,12 +63,12 @@ security
 
             (actually submit a pr to refactor it)
 
-    encrypted filesystem
-        LUKS
+    encrypted filesystems
+        LUKS encryption
 
         auto login?
 
-    ybikeys
+    YubiKeys
     
 
 fix ethernet getting stuck on reconnect:
@@ -81,30 +81,30 @@ store firefox extension data?
     add a command to place these into the repo?
 
 
-optimise for battery
+optimize for battery
 
 notification on low battery
 
-hybernate to prevent data loss instead of dying?
+hibernate to prevent data loss instead of dying?
 
 
 prelockd
-    prevent freezes in low ram senarios
+    prevent freezes in low ram scenarios
 
-add pueued
-    ask lokegustafsson for his pkg
-    prevent freezes in low ram senarios
-
-
-himachi
-    for fake lan 
-
-    could probalby do this with homelab too
-
-    or some other manuall thing
+add Pueued
+    ask Loke Gustafsson for his pkg
+    prevent freezes in low ram scenarios
 
 
-Change how lid switch is handeld?
+Hamachi
+    for fake LAN 
+
+    could probably do this with homelab too
+
+    or some other manual thing
+
+
+Change how lid switch is handled?
     https://github.com/Aylur/dotfiles/blob/18b83b2d2c6ef2b9045edefe49a66959f93b358a/nixos/system.nix#L44
 
 
