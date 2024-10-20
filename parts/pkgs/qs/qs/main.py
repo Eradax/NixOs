@@ -666,7 +666,7 @@ class Steps:
         
         # TODO: remove when i don't manually have to ado this 
 
-        run_cmd("ssh-add ~/.ssh/id_*", print_res=False)
+        run_cmd("ssh-add ~/.ssh/id_ed25519", print_res=False)
    
         print_devider(commit_devider)
     
