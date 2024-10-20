@@ -741,6 +741,15 @@ class Steps:
             color=True,
         )
 
+    @staticmethod
+    def show_log():
+        print_devider("Git Log")
+        run_cmd(
+            "git --no-pager log --color -n 10 --oneline",
+            print_res=True,
+            color=True,
+        )
+
     @staticmethod 
     def tmp_stash_changes():
         has_changes = run_cmd("git diff HEAD").strip() != ""
@@ -916,6 +925,10 @@ def main():
                 "alias": ["p"],
                 "info": "pull from remote and rebuild",
             },
+            "log": {
+                "alias": ["l"],
+                "info": "show git log"
+            }
         },
     })
     
@@ -1000,6 +1013,11 @@ def main():
 
             Steps.push_changes()
             Steps.print_success()
+
+            return None
+
+        elif sub_command == "log":
+            Steps.show_log()
 
             return None
     
