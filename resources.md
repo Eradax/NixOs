@@ -73,6 +73,7 @@ journalctl -xeu home-manager-upidapi.service
 
 # Other people
 
+- **adv** := is it advanced?
 - **imp** := impermanence
 - **big** := is there a lot?
 - **h-m** := home manager
@@ -82,22 +83,24 @@ journalctl -xeu home-manager-upidapi.service
 
 ## Repo overviews
 
-| User                                                                 | [adv] | [imp] | [h-m] | [flk] | [sps] |
-|----------------------------------------------------------------------|-------|-------|-------|-------|-------|
-| [jakehamilton](https://github.com/jakehamilton/config) - modules    |   [ ] |   [ ] |   [ ] |   [x] |   [ ] |
-| [lokegustafsson](https://github.com/lokegustafsson/nixos-getting-started) - nix opts |   [ ] |   [ ] |   [ ] |   [ ] |   [ ] |
-| [errornointernet](https://github.com/errornointernet/configuration.nix) - nixvim |   [ ] |   [ ] |   [x] |   [x] |   [ ] |
-| [nobbz](https://github.com/nobbz/nixos-config/)                     |   [x] |   [ ] |   [x] |   [x] |   [-] |
-| [sebastianstork](https://github.com/sebastianstork/nixos-config)   |   [ ] |   [ ] |   [x] |   [x] |   [x] |
-| [fufexan](https://github.com/fufexan/dotfiles)                      |   [x] |   [ ] |   [x] |   [x] |   [-] |
-| [mic92](https://github.com/mic92/dotfiles) - dev shell              |   [x] |   [ ] |   [x] |   [x] |   [x] |
-| [workflow](https://github.com/workflow/dotfiles)                   |   [ ] |   [ ] |   [x] |   [x] |   [ ] |
-| [notohh](https://github.com/notohh/snowflake)                       |   [ ] |   [ ] |   [x] |   [x] |   [x] |
-| [adamcstephens](https://codeberg.org/adamcstephens/dotfiles)       |   [x] |   [ ] |   [x] |   [x] |   [ ] |
-| [vimjoyer](https://github.com/vimjoyer/nixconf) - vimjoyer         |   [ ] |   [x] |   [x] |   [x] |   [x] |
-| [librephoenix](https://github.com/librephoenix/nixos-config) - sops, auto-install |   [x] |   [ ] |   [x] |   [x] |   [x] |
-| [misterio77](https://github.com/misterio77/nix-config)             |   [x] |   [x] |   [x] |   [x] |   [x] |
-| [raf](https://github.com/notashelf/nyx) - well organised, huge      |   [x] |   [x] |   [x] |   [x] |   [x] |
+
+| User                                                                      | Comments                     | adv   | imp   | h-m   | flk   | sps   |
+|---------------------------------------------------------------------------|------------------------------|-------|-------|-------|-------|-------|
+| [jakehamilton](https://github.com/jakehamilton/config)                    | modules                      | [ ]   | [ ]   | [x]   | [ ]   | [ ]   |
+| [lokegustafsson](https://github.com/lokegustafsson/nixos-getting-started) | nix opts                     | [ ]   | [ ]   | [ ]   | [ ]   | [ ]   |
+| [ErrorNoInternet](https://github.com/errornointernet/configuration.nix)   | nixvim                       | [ ]   | [ ]   | [x]   | [x]   | [ ]   |
+| [nobbz](https://github.com/nobbz/nixos-config/)                           |                              | [x]   | [ ]   | [x]   | [x]   | [-]   |
+| [sebastianstork](https://github.com/sebastianstork/nixos-config)          |                              | [ ]   | [ ]   | [x]   | [x]   | [x]   |
+| [fufexan](https://github.com/fufexan/dotfiles)                            |                              | [x]   | [ ]   | [x]   | [x]   | [-]   |
+| [mic92](https://github.com/mic92/dotfiles)                                | dev shell                    | [x]   | [ ]   | [x]   | [x]   | [x]   |
+| [workflow](https://github.com/workflow/dotfiles)                          |                              | [ ]   | [ ]   | [x]   | [x]   | [ ]   |
+| [notohh](https://github.com/notohh/snowflake)                             |                              | [ ]   | [ ]   | [x]   | [x]   | [x]   |
+| [adamcstephens](https://codeberg.org/adamcstephens/dotfiles)              |                              | [x]   | [ ]   | [x]   | [x]   | [ ]   |
+| [vimjoyer](https://github.com/vimjoyer/nixconf)                           |                              | [ ]   | [x]   | [x]   | [x]   | [x]   |
+| [LibrePhoenix](https://github.com/librephoenix/nixos-config)              | sops, auto-install           | [x]   | [ ]   | [x]   | [x]   | [x]   |
+| [misterio77](https://github.com/misterio77/nix-config)                    |                              | [x]   | [x]   | [x]   | [x]   | [x]   |
+| [NotAShelf](https://github.com/notashelf/nyx)                             | well organised, huge         | [x]   | [x]   | [x]   | [x]   | [x]   |
+
 
 
 # use to search some repos i trust for examples
