@@ -421,7 +421,7 @@ class Steps:
     @staticmethod
     def _fmt_gen_commit_msg(
             msg, 
-            commit_type: Literal["manuall", "pre-ammend", "pre-rebuild"], 
+            commit_type: Literal["manual", "pre-ammend", "pre-rebuild"], 
             profile, 
             gen_data, 
             extra_gens: list[str],
@@ -527,7 +527,7 @@ class Steps:
 
         full_commit_msg = Steps._fmt_gen_commit_msg(
             args['--message'][0][0],
-            "manuall",
+            "manual",
             get_profile(args), 
             Steps.get_gen_data(),
             [last_gen_data["gens"][-1]],
@@ -565,7 +565,7 @@ class Steps:
         commit_hash, last_gen_data = Steps._find_pre_rebuild_commit(id)
         full_commit_msg = Steps._fmt_gen_commit_msg(
             args['--message'][0][0],
-            "manuall",
+            "manual",
             profile, 
             Steps.get_gen_data(),
             [last_gen_data["gens"][-1]],
@@ -702,7 +702,7 @@ class Steps:
             # show the final msg not the 
             print(Steps._fmt_gen_commit_msg(
                 args['--message'][0][0],
-                "manuall",
+                "manual",
                 profile, 
                 Steps.get_gen_data(),
                 [],
