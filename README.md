@@ -44,7 +44,7 @@ Some of the people that I've ~stolen from~ been inspired by. There's probably a 
 - [Loke Gustafsson](https://github.com/lokegustafsson/nixos-getting-started) - nix defaults, especially the global pining of nixpkgs
 - [ErrorNoInternet](https://github.com/ErrorNoInternet/configuration.nix) - nixvim config used as a reference
 - [vimjoyer](https://www.youtube.com/@vimjoyer) - easy to follow guides for everything nix
-- [NoBoilerplate](https://www.youtube.com/@NoBoilerplate) - made me start my stockholm syndrome filled journey with nixos
+- [NoBoilerplate](https://www.youtube.com/@NoBoilerplate) - made me start my Stockholm syndrome filled journey with nixos
 - [NobbZ](https://github.com/NobbZ/nixos-config/) - nix sops
 - [SebastianStork](https://github.com/SebastianStork/nixos-config) - nix sops
 - [fufexan](https://github.com/fufexan/dotfiles)

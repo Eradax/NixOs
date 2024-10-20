@@ -664,7 +664,7 @@ class Steps:
     def _raw_commit(args, commit_msg, commit_devider):
         print_devider("Commit msg")
         
-        # TODO: remove when i don't manually have to ado this 
+        # TODO: remove when i don't manually have to do this 
 
         run_cmd("ssh-add ~/.ssh/id_ed25519", print_res=False)
    
