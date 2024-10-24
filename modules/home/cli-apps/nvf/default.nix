@@ -1,4 +1,4 @@
-# 95% of this file is directly copied from raf / NotAShelf
+# 95% of this file is directly copied from raf
 # the rest is based on it
 {
   config,
@@ -24,6 +24,14 @@ in {
     ./modules
   ];
 
+  # TODO: move away from the nvf neovim config stuff and just use lua directly
+  #  basically use it as a package manager, and for not much else
+  #  might go as far as to switch to mnw
+
+  # TODO: might make this into a flake and consume it to make quick iteration
+  #  much easier. Its annoying having to rebuild the system just for a
+  #  neovim setting
+
   options.modules.home.cli-apps.nvf =
     mkEnableOpt "enables nvf a neovim distro powerd by nix";
 
@@ -31,6 +39,7 @@ in {
     programs.nvf = {
       enable = true;
       enableManpages = true;
+
       defaultEditor = true;
 
       settings.vim = {
@@ -71,9 +80,12 @@ in {
         git clone https://github.com/psliwka/vim-dirtytalk.git
         cat vim-dirtytalk/wordlists/* > programing.words
 
+
         # in nvim
         :mkspell /persist/nixos/modules/home/cli-apps/nvf/runtime/spell/prog ~/programing.words
         */
+
+        # (this can probable be automated)
 
         # recreate the add.spl file
         /*

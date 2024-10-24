@@ -1,12 +1,6 @@
-{
-  config,
-  lib,
-  inputs,
-  pkgs,
-  ...
-}: let
+{inputs, ...}: let
   inherit (inputs.nvf.lib.nvim.binds) mkSetLuaBinding;
-  cfg = config.programs.nvf.vim;
+  # cfg = config.programs.nvf.vim;
 in {
   programs.nvf.settings.vim = {
     # there are more debuggers in the lang(s)
@@ -61,6 +55,7 @@ in {
             EXPLORE = {
               icon = "󰍉";
               color = "#2563EB";
+              alt = ["EXP"];
             };
             TODO = {
               icon = " ";
@@ -93,6 +88,10 @@ in {
               alt = [
                 "INFO"
               ];
+            };
+            REF = {
+              icon = " ";
+              color = "hint";
             };
             /*
                TEST = {

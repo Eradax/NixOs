@@ -12,12 +12,15 @@
   cfg = config.modules.home.cli-apps.nvf;
 in {
   imports = [
-    ./cmp.nix
+    ## ./cmp.nix
     ./dap.nix
-    ./text.nix
-    ./lang.nix
+    ## ./text.nix
+    ## ./lang.nix
     ./notes.nix
   ];
+
+  # TODO: various refactoring tools
+  #  eg rope for python
 
   config = mkIf cfg.enable {
     # TODO: fix nix str escape highliting
@@ -27,19 +30,46 @@ in {
     #  semantic rokens but in the TreeSitter things
     /*
     Treesitter
-      - @string.escape.nix links to @string.escape nix  # <== is here
+    - @string.escape.nix links to @string.escape nix  # <== is here
 
     Semantic Tokens
-      - @lsp.type.string.nix links to String priority: 125  # <== should be here
-      - @lsp.type.string.nix links to String priority: 125
-      - @lsp.mod.escape.nix links to @lsp priority: 126
-      - @lsp.typemod.string.escape.nix links to @lsp priority: 127
+    - @lsp.type.string.nix links to String priority: 125  # <== should be here
+     - @lsp.type.string.nix links to String priority: 125
+    - @lsp.mod.escape.nix links to @lsp priority: 126
+    - @lsp.typemod.string.escape.nix links to @lsp priority: 127
     */
 
     # x = "asd//// \\ \" \\ \${gjkhg} "; y = "";
+    home.packages = with pkgs; [
+      nixd
+      # nixfmt
+      nixfmt-rfc-style
+      nixpkgs-fmt
+    ];
 
     programs.nvf = {
       settings.vim = {
+        startPlugins = with pkgs.vimPlugins; [
+          (nvim-treesitter.withPlugins (
+            parsers: builtins.attrValues {inherit (parsers) nix markdown markdown_inline;}
+          ))
+          friendly-snippets
+          luasnip
+          nvim-cmp
+          cmp-nvim-lsp
+          cmp-buffer
+          cmp_luasnip
+          cmp-path
+          cmp-cmdline
+          none-ls-nvim
+          nvim-lspconfig
+          nord-nvim
+          noice-nvim
+          lualine-nvim
+          bufferline-nvim
+          lspsaga-nvim
+        ];
+
         # ? syntaxHighlighting = true;
         hideSearchHighlight = false; # ?
         searchCase = "sensitive";
@@ -119,6 +149,7 @@ in {
         # TODO: binds?
         git.vim-fugitive = enable;
 
+        /*
         lsp = {
           enable = true;
           formatOnSave = false;
@@ -154,6 +185,7 @@ in {
 
           # trouble = enable;
         };
+        */
 
         notify = {
           # ? nvim-notify = enable;
@@ -219,6 +251,7 @@ in {
               "<leader>tt".action = "<cmd>Neotree toggle<CR>";
               "<leader>tu".action = "<cmd>Neotree<CR>";
               "<leader>tr".action = "<cmd>Neotree reveal<CR>";
+              "Ö".action = ":";
             }
             // m;
           insert = {
@@ -226,6 +259,7 @@ in {
             "<down>".action = "<c-o>g<down>";
           };
           visual = m;
+          terminal."<Esc>".action = "<C-\><C-n>";
         };
 
         telescope = {
@@ -273,6 +307,7 @@ in {
           style = "night";
         };
 
+        /*
         treesitter = {
           enable = true;
           autotagHtml = true;
@@ -292,6 +327,7 @@ in {
             # TODO:
           };
         };
+        */
 
         ui = {
           borders = disable;
@@ -310,6 +346,8 @@ in {
         };
 
         utility = {
+          # NOTE: ccc breaks nixd :)
+          /*
           ccc = {
             enable = true;
             mappings = {
@@ -318,6 +356,7 @@ in {
               quit = "<Esc>";
             };
           };
+          */
 
           diffview-nvim = enable;
           # icon-picker = enable;
