@@ -124,7 +124,8 @@ in {
                       return false
                     end
 
-                    return true
+                    -- return true
+                    return false -- set this to true to enable autosave
                   end
                 }
               '';
