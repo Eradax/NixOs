@@ -16,6 +16,23 @@ in {
   config = mkIf cfg.enable {
     home.packages = [
       (pkgs.writeShellScriptBin "clr-pckr" ''
+        LOCKFILE="/run/user/$(id -u)/clr-pckr.lock"
+
+        if [ -e "$LOCKFILE" ]; then
+            PID=$(cat "$LOCKFILE")
+
+            if kill -0 "$PID" 2>/dev/null; then
+                echo "Script is already running with PID $PID. Exiting..."
+                exit 1
+            else
+                echo "Stale lock file found. Cleaning it up..."
+                rm -f "$LOCKFILE"
+            fi
+        fi
+
+        echo $$ > "$LOCKFILE"
+        trap 'rm -f "$LOCKFILE"' INT QUIT ABRT ALRM TERM
+
         color=$(hyprpicker -n)
 
         if test -z "$color"; then
@@ -42,6 +59,8 @@ in {
         notify-send --icon "$squircle_color" "Hyprpicker" "$color"
 
         rm "$squircle_color"
+
+        rm -f "$LOCKFILE"
       '')
     ];
   };
