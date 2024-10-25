@@ -77,7 +77,7 @@ in {
           # podman = enable; # FIXME: podman is broken rn
           # vfio = enable;
           qemu = enable;
-          waydroid = enable;
+          # waydroid = enable;
           distrobox = enable;
         };
       };
