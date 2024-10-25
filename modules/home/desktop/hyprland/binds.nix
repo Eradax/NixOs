@@ -64,7 +64,7 @@ in {
         ];
 
       # kbd binds
-      # NOTE: Submaps are ./submaps.nix since you have to use extraConfig at the moment
+      # NOTE: Submaps are in ./submaps.nix since you have to use extraConfig at the moment
       bind = let
         mkArrowBind = mods: cmd: [
           "$mod ${mods}, H, ${cmd}, l"

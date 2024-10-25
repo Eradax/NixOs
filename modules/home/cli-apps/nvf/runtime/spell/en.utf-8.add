@@ -1,3 +1,8 @@
+.spl 
+.toml 
+.txt 
+.yaml 
+.yml 
 addons
 alacritty
 alt 
@@ -161,7 +166,6 @@ ripgrep
 sddm
 sourcetree 
 spicetify
-.spl 
 spotify
 src 
 stackoverflow
@@ -171,6 +175,7 @@ stdin
 stdout
 str 
 struct 
+submaps
 subpath 
 substr 
 substring 
@@ -181,10 +186,8 @@ syncthing
 systemd
 tmp
 todo
-.toml 
 treesitter
 tui 
-.txt 
 ui
 unix 
 unwritable
@@ -210,8 +213,6 @@ wl
 www 
 xdg
 xserver
-.yaml 
-.yml 
 zfs
 zsh 
 zsh 
