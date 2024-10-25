@@ -73,7 +73,24 @@ in {
             name = "nvim-runtime";
             path = toString ./runtime;
           })
+
+          /*
+          (path {
+            name = "nvim-lua-config";
+            path = toString ./.;
+          })
+          */
         ];
+
+        # inclue this directory (/nvf) in the lua path
+        # so that we can use it like we would normally
+        luaConfigPre = ''
+          package.path = package.path .. ";" .. "${./.}/?.lua"
+        '';
+
+        luaConfigPost = ''
+          require("lua.init")
+        '';
 
         # use the following cmd to recreate the vim dirtytalk plugin
         /*
@@ -114,8 +131,7 @@ in {
           #  `<filePath> = entryAnywhere ''<contents of filePath>''`
           # which is expected by nvf's modified DAG library
           luaConfig = genAttrs configPaths (file:
-            entryBefore ["luaScript"] ''
-              ${fileContents file}
+            entryAfter ["luaScript"] ''
             '');
         in
           luaConfig // {spell = "vim.o.spellfile = \"${spellFile}\"";};
