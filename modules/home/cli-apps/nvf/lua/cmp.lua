@@ -3,8 +3,6 @@ local options = {
 
     showtabline = 2, -- always show tab line
 
-    formatsave = false,
-
     encoding = "utf-8",
     hidden = true,
 
@@ -60,6 +58,8 @@ for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
+-- TODO: format on save?
+
 --[==[
 -- for markdow preview
 vim.g.mkdp_auto_close = true
@@ -72,8 +72,8 @@ vim.g.mkdp_port = {["_type"] = "if",["condition"] = false,["content"] = ""}
 vim.g.mkdp_refresh_slow = false
 ]==]--
 
-vim.opt.mapleader = " "
-vim.opt.maplocalleader = " "
+vim.g.mapleader = " "
+-- vim.g.maplocalleader = " "
 -- map <C-Space> to <Leader> in insert
 vim.api.nvim_set_keymap(
     'i', '<C-Space>', '<C-o><leader>',
