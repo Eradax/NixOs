@@ -16,6 +16,9 @@ nix
     Index the nixos server for better searching
         https://github.com/Tyrrrz/DiscordChatExporter?tab=readme-
 
+   
+increase repeat speed for keyboard keys
+
 Virtualization
     MAS
         free windows keys
