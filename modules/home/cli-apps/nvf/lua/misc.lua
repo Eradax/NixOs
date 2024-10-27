@@ -93,7 +93,7 @@ require("auto-save").setup {
       return false
     end
 
-    return true
+    return false -- change to true to enable
   end
 }
 
