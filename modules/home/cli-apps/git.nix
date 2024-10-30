@@ -64,6 +64,7 @@ in {
       userEmail = "erikadebahr@gmail.com";
 
       # TODO: Add merge conflict handling with eg. rebase
+
       # EXPLORE: git
       # - aliases
       # - color
