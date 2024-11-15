@@ -18,7 +18,7 @@ in {
         # TODO: switch back to unstable vesktop when it works
         # default = pkgs.vesktop.override {
         default = inputs'.nixpkgs-stable.legacyPackages.vesktop.override {
-          withSystemVencord = false;
+          # withSystemVencord = false;
         };
       };
 
@@ -41,12 +41,71 @@ in {
       };
     };
 
-  # TODO: change the startup gif, currently not possible but there is
-  #  a pr that will change that
-
   config = mkIf cfg.enable {
     home.packages = [
       cfg.finalPackage
     ];
+
+    stylix.targets.vesktop.enable = false;
+
+    xdg.configFile = {
+      "vesktop/settings/settings.json".text = builtins.toJSON (
+        (builtins.fromJSON (builtins.readFile ./vencord-config.json))
+        // {
+          notifyAboutUpdates = true;
+          autoUpdate = false;
+          autoUpdateNotification = true;
+          useQuickCss = true;
+          themeLinks = [
+            # halfbroken tokyo night theme
+            # "https://raw.githubusercontent.com/Dyzean/Tokyo-Night/main/themes/tokyo-night.theme.css"
+          ];
+          enabledThemes = [
+            # custom theme
+            "theme.css"
+          ];
+          enableReactDevtools = false;
+          frameless = false;
+          transparent = false;
+          winCtrlQ = false;
+          disableMinSize = false;
+          winNativeTitleBar = false;
+        }
+      );
+
+      "vesktop/themes/theme.css".text = builtins.readFile ./theme.css;
+
+      "vesktop/settings.json".text = builtins.toJSON {
+        arRPC = "on";
+        discordBranch = "stable";
+        hardwareAcceleration = false;
+        minimizeToTray = "on";
+
+        splashTheming = true;
+        splashColor = config.stylix.base16Scheme.base07;
+        splashBackground = config.stylix.base16Scheme.base01;
+
+        tray = true;
+        trayBadge = true;
+      };
+    };
+
+    # vesktop schecks if state.json has the "firstLaunch" to
+    # determine if it should show the "Welcome to vesktop" page
+    home.activation = {
+      # We have to do it like this since vesktop needs be able to
+      # write to it (a symlink to the store would have been unwritabe)
+      # If vesktop can't write to it then it chrashes
+      createVesktiopStateJson = let
+        state_path = "~/.config/vesktop/state.json";
+        data = builtins.toJSON {
+          # (the other setting dont matter)
+          firstLaunch = false; # the value of this is ignored lol
+        };
+      in
+        lib.hm.dag.entryAfter ["linkGeneration"] ''
+          echo '${data}' > ${state_path}
+        '';
+    };
   };
 }
