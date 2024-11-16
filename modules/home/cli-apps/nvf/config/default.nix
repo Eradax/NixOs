@@ -52,7 +52,6 @@ in {
       # python stuff
       ruff
       pyright
-
     ];
 
     programs.nvf = {
