@@ -188,6 +188,7 @@ require("null-ls").setup({
     sources = {
         -- you must download code formatter by yourself!
         require("null-ls").builtins.formatting.alejandra,
+        require("null-ls").builtins.formatting.ruff,
     },
     debug = false,
     on_attach = function(client, bufnr)
@@ -284,6 +285,45 @@ nvim_lsp.nixd.setup({
         },
     },
 })
+
+nvim_lsp.ruff.setup({
+    init_options = {
+        settings = {
+            configuration = "$NIXOS_CONFIG_PATH/modules/home/cli-apps/nvf/cfg-files/ruff.toml"
+        }
+    }
+})
+
+-- defer hover to pyright
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client == nil then
+      return
+    end
+    if client.name == 'ruff' then
+      -- Disable hover in favor of Pyright
+      client.server_capabilities.hoverProvider = false
+    end
+  end,
+  desc = 'LSP: Disable hover capability from Ruff',
+})
+
+require('lspconfig').pyright.setup {
+  settings = {
+    pyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        -- Ignore all files for analysis to exclusively use Ruff for linting
+        ignore = { '*' },
+      },
+    },
+  },
+}
 
 
 -------------------

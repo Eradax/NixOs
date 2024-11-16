@@ -1,5 +1,5 @@
 {my_lib, ...}: let
-  inherit (my_lib.opt) enable;
+  inherit (my_lib.opt) enable disable;
 in {
   programs.nvf = {
     settings.vim = {
@@ -21,15 +21,18 @@ in {
 
         nix = {
           enable = true;
-          lsp.enable = false;
+          lsp = disable;
+          format = disable;
         };
-        # // {
-        #   lsp.enable = false;
-        # };
-        go = enable;
+        go = {
+          enable = true;
+        };
         python = {
           enable = true;
-          lsp.enable = false; # use ruff
+
+          # use ruff
+          lsp = disable;
+          format = disable;
         };
         bash = enable;
         sql = enable;
@@ -41,7 +44,7 @@ in {
 
         rust = {
           enable = true;
-          crates.enable = true;
+          crates = enable;
         };
 
         clang = {

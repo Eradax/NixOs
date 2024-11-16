@@ -48,6 +48,11 @@ in {
       imagemagick
       curl # (Remote images)
       ueberzugpp
+
+      # python stuff
+      ruff
+      pyright
+
     ];
 
     programs.nvf = {
