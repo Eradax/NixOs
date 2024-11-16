@@ -298,7 +298,7 @@ require('todo-comments').setup({
             alt = {
                 "EXP"
             },
-            color = "#2563EB",
+            color = "todo",
             icon = "󰍉"
         },
         FIX = {
@@ -338,7 +338,7 @@ require('todo-comments').setup({
             alt = {
                 "todo"
             },
-            color = "#2563EB",
+            color = "todo",
             icon = " "
         },
         WARN = {
