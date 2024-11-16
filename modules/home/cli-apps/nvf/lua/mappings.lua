@@ -42,10 +42,11 @@ local mappings = {
     { "n", "<leader>dh",  require('dap.ui.widgets').hover },
     { "n", "<leader>du",  require('dapui').toggle },
 
-    { "n", "gnn",         nvim_tree_select.init_selection },
-    { "x", "grc",         nvim_tree_select.scope_incremental },
-    { "x", "grm",         nvim_tree_select.node_decremental },
-    { "x", "grn",         nvim_tree_select.node_incremental },
+    -- seems to do the sane as node_incremental
+    -- { "n", "gnn",         nvim_tree_select.init_selection },
+    { "x", "gsJ",         nvim_tree_select.scope_incremental },
+    { "x", "gsj",         nvim_tree_select.node_decremental },
+    { "x", "gsk",         nvim_tree_select.node_incremental },
 
     { "n", "<leader>fC",  "<cmd> Telescope git_commits<CR>" },
     { "n", "<leader>fb",  "<cmd> Telescope buffers<CR>" },
