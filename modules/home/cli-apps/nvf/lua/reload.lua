@@ -32,7 +32,7 @@ end
 vim.keymap.set(
     'n', '<leader>rc', 
     hotload_config,
-    { noremap = true }
+    -- { noremap = true }
 )
 
 
