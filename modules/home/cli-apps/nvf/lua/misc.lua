@@ -41,7 +41,7 @@ local options = {
 
     cursorlineopt = "line",
     cursorcolumn = false,
-    scrolloff = 0,
+    scrolloff = 8,
 
     splitbelow = true,
     splitright = true,
@@ -55,8 +55,6 @@ local options = {
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
-
--- TODO: format on save?
 
 --[==[
 -- for markdow preview
