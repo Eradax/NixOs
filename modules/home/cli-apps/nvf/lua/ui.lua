@@ -147,17 +147,33 @@ require('project_nvim').setup({
 ---- colorizer ----
 -- https://github.com/norcalli/nvim-colorizer.lua
 require('colorizer').setup({
-    RGB      = true,  -- #RGB hex codes
-    RRGGBB   = true,  -- #RRGGBB hex codes
-    names    = false, -- "Name" codes like Blue
-    RRGGBBAA = true,  -- #RRGGBBAA hex codes
-    rgb_fn   = true,  -- CSS rgb() and rgba() functions
-    hsl_fn   = true,  -- CSS hsl() and hsla() functions
-    css      = false,  -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-    css_fn   = false,  -- Enable all CSS *functions*: rgb_fn, hsl_fn
+    filetypes = { "*" },
+    user_default_options = {
+        RGB      = true,  -- #f0f hex codes
+        RRGGBB   = true,  -- #ff00ff hex codes
+        RRGGBBAA = true,  -- #ff00ff00 hex codes
+        rgb_fn   = true,  -- CSS rgb(255, 0, 255) and rgba() functions
+        hsl_fn   = true,  -- CSS hsl(300, 100%, 50%) and hsla() functions
 
-    -- Available modes: foreground, background
-    mode     = 'background',
+        names    = false, -- "Name" codes like Blue
+        css      = false,  -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn   = false,  -- Enable all CSS *functions*: rgb_fn, hsl_fn
+
+        -- Available modes: foreground, background, virtualtext
+        mode     = 'background', -- set the display mode
+        tailWind = true,
+        virtualtext = "■",
+
+        -- enable sass colors
+        sass = {
+            enable = false,
+            parsers = { "css" },
+        },
+
+        -- update colors even if the buffer isn't focused
+        always_update = false
+    },
+    buftypes = {},
 })
 
 -- NOTE: ccc breaks nixd :)
@@ -365,7 +381,7 @@ require('todo-comments').setup({
             "--line-number",
             "--column"
         },
-        command = "/nix/store/jpylriswiywbbs2dw5x8v5db6jc25nj0-ripgrep-14.1.1/bin/rg",
+        command = "rg",
         pattern = "\\b(KEYWORDS)(\\([^\\)]*\\))?:"
     },
     signs = false
