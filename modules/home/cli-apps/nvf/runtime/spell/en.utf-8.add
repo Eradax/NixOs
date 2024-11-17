@@ -1,8 +1,8 @@
-.spl 
-.toml 
-.txt 
-.yaml 
-.yml 
+.spl
+toml
+.txt
+yaml
+.yml
 addons
 alacritty
 alt 
