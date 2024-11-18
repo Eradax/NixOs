@@ -38,7 +38,6 @@ in {
       cli-apps = {
         clr-pckr = enable;
         keepassxc = enable;
-        # nixvim = enable;
         # nushell = enable;
         nvf = enable;
         bat = enable;

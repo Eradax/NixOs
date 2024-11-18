@@ -2,7 +2,6 @@
   imports = [
     ./clr-pckr
     ./keepassxc
-    ./nixvim
     ./nushell
     ./nvf
     ./bat.nix
