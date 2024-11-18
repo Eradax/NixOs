@@ -36,7 +36,13 @@ in {
 
         startPlugins = with pkgs.vimPlugins; [
           (nvim-treesitter.withPlugins (
-            parsers: builtins.attrValues {inherit (parsers) nix markdown markdown_inline;}
+            parsers:
+              with parsers; [
+                nix
+                markdown
+                markdown_inline
+                norg
+              ]
           ))
           "comment-nvim"
           "nvim-autopairs"

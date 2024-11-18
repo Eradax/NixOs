@@ -1,8 +1,13 @@
-
 vim.o.linebreak = true
 
 -- added from the nix
--- vim.o.spellfile = "/nix/store/2ic8l7dfqi80bmwlrvzpq5y94si8h3ds-nvf-en.utf-8.add"
+-- use the spell file in the repo
+-- if NIXOS_CONFIG_PATH is unset it falls back to the one
+-- generated ad build time
+local cfg = vim.env.NIXOS_CONFIG_PATH
+if cfg then
+    vim.o.spellfile = cfg .. "/modules/home/cli-apps/nvf/runtime/spell/en.utf-8.add"
+end
 
 vim.opt.spelloptions = {"camel", "noplainbuffer"};
 -- end

@@ -45,8 +45,8 @@ local mappings = {
     -- seems to do the sane as node_incremental
     -- { "n", "gnn",         nvim_tree_select.init_selection },
     { "x", "gsJ",         nvim_tree_select.scope_incremental },
-    { "x", "gsj",         nvim_tree_select.node_decremental },
-    { "x", "gsk",         nvim_tree_select.node_incremental },
+    { "n", "gsj",         nvim_tree_select.node_decremental },
+    { "n", "gsk",         nvim_tree_select.node_incremental },
 
     { "n", "<leader>fC",  "<cmd> Telescope git_commits<CR>" },
     { "n", "<leader>fb",  "<cmd> Telescope buffers<CR>" },
