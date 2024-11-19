@@ -26,7 +26,8 @@ in {
       enable = true;
       settings = {
         background =
-          lib.mkForce
+          lib.mkForce # TODO: remove the mkForce and disable stylix
+          
           (builtins.map
             (monitor: {
               monitor = fmtDesc monitor.name;
