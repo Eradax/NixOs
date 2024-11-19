@@ -96,7 +96,7 @@ in {
 
           # why does neorg have so many deps?!
           # start
-          neorg
+          "neorg"
           "neorg-telescope"
           "lua-utils-nvim"
           "nui-nvim"
