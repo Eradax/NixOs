@@ -38,6 +38,7 @@ in {
         rbc = "rebase --continue";
         rbi = "rebase --interactive";
 
+        r = "restore";
         rs = "restore --staged";
       };
       delta = {
