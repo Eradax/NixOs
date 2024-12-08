@@ -47,30 +47,32 @@ in {
           hide_cursor = false;
           no_fade_in = false;
         };
-        input-field = [
-          {
-            monitor = primary;
-            size = "350, 50";
-            outline_thickness = 2;
-            outer_color = "rgb(f7768e)";
-            inner_color = "rgb(1a1b26)";
-            font_color = "rgb(c0caf5)";
-            fail_color = "rgb(f7768e)";
-            fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
-            check_color = "rgb(ff9e64)";
-            swap_font_color = false;
-            placeholder_text = ''
-              <i><span foreground="##c0caf5">Password...</span></i>
-            '';
-            fade_on_empty = false;
-            dots_spacing = 0.5;
-            dots_center = true;
-            shadow_passes = 3;
-            shadow_size = 1;
-            shadow_color = "rgba(00000099)";
-            shadow_boost = 1.0;
-          }
-        ];
+        input-field =
+          lib.mkForce
+          [
+            {
+              monitor = primary;
+              size = "350, 50";
+              outline_thickness = 2;
+              outer_color = "rgb(f7768e)";
+              inner_color = "rgb(1a1b26)";
+              font_color = "rgb(c0caf5)";
+              fail_color = "rgb(f7768e)";
+              fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
+              check_color = "rgb(ff9e64)";
+              swap_font_color = false;
+              placeholder_text = ''
+                <i><span foreground="##c0caf5">Password...</span></i>
+              '';
+              fade_on_empty = false;
+              dots_spacing = 0.5;
+              dots_center = true;
+              shadow_passes = 3;
+              shadow_size = 1;
+              shadow_color = "rgba(00000099)";
+              shadow_boost = 1.0;
+            }
+          ];
         label = [
           {
             monitor = primary;

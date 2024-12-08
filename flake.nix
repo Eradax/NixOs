@@ -56,7 +56,7 @@
 
     # An extensible Neovim configuration wrapper.
     nvf = {
-      url = "github:NotAShelf/nvf/v0.7"; # TODO: remove once v0.7 merges
+      url = "github:NotAShelf/nvf";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
@@ -69,7 +69,7 @@
     };
 
     ags = {
-      url = "github:Aylur/ags";
+      url = "github:aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
