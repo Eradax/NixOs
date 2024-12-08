@@ -222,7 +222,7 @@ in {
 
         debugger = {
           nvim-dap = {
-            enable = true;
+            # enable = true;
 
             # done in lua
             # ui = enable;

@@ -18,6 +18,8 @@ in {
   config = mkIf cfg.enable {
     home.packages = [pkgs.hyprlock];
 
+    stylix.targets.hyprlock.enable = false;
+
     programs.hyprlock = let
       monitorCfg = osConfig.modules.nixos.hardware.monitors;
       fmtDesc = name: removePrefix "desc:" name;
@@ -26,21 +28,19 @@ in {
       enable = true;
       settings = {
         background =
-          lib.mkForce # TODO: remove the mkForce and disable stylix
-          
-          (builtins.map
-            (monitor: {
-              monitor = fmtDesc monitor.name;
-              path = "${./wallpaper/wallpapers/simple-tokyo-night.png}";
-              blur_passes = 3;
-              blur_size = 4;
-              brightness = 0.5;
-            })
-            (
-              builtins.filter
-              (m: m.enabled)
-              (builtins.attrValues monitorCfg.monitors)
-            ));
+          builtins.map
+          (monitor: {
+            monitor = fmtDesc monitor.name;
+            path = "${./wallpaper/wallpapers/simple-tokyo-night.png}";
+            blur_passes = 3;
+            blur_size = 4;
+            brightness = 0.5;
+          })
+          (
+            builtins.filter
+            (m: m.enabled)
+            (builtins.attrValues monitorCfg.monitors)
+          );
         general = {
           grace = 5;
           disable_loading_bar = false;
