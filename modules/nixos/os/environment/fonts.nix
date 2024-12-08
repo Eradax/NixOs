@@ -35,7 +35,6 @@ in {
 
         material-symbols
         nerd-fonts.symbols-only
-        pantheon.elementary-icon-theme
       ])
       ++ cfg.fonts;
   };
