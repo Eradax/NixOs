@@ -26,7 +26,7 @@ in {
         anki = enable;
         bitwarden = enable;
         inkscape = enable;
-        # mathematica = enable;
+        mathematica = enable;
         r2modman = enable;
         spotify = enable;
       };

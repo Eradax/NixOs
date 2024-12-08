@@ -34,7 +34,7 @@ in {
         # noto-fonts-emoji  # i think this breaks other glyphs, for example the lock turns into some red thingy
 
         material-symbols
-        nerd-fonts.symbols-only
+        (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
       ])
       ++ cfg.fonts;
   };
