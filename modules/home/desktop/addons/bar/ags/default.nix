@@ -23,7 +23,7 @@ in {
   #!/bin/env bash
 
   # to run this manually use
-  ags --quit
+  ags --quit;
 
   cd || return
   color_cfg="$(realpath .config/ags/colors.scss)"
