@@ -23,7 +23,7 @@ in {
   #!/bin/env bash
 
   # to run this manually use
-  ags --quit;
+  ags --quit
 
   cd || return
   color_cfg="$(realpath .config/ags/colors.scss)"
@@ -68,7 +68,4 @@ in {
         (color: name: "\$${name}: #${color};");
     };
   };
-
-  # to run exec: (in this dir)
-  # eww open -c ./ bar --arg monitor_id=2
 }
