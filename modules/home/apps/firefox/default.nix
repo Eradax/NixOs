@@ -11,31 +11,44 @@
   cfg = config.modules.home.apps.firefox;
 in {
   options.modules.home.apps.firefox =
-    mkEnableOpt
-    "enables firefox";
+    mkEnableOpt "enables firefox";
 
-  # EXPLORE: https://github.com/qutebrowser/qutebrowser
+  # https://github.com/qutebrowser/qutebrowser
   #  a vim like browser with minimal gui and a focus on the keyboard
 
-  # TODO: add https://github.com/ray-lothian/UserAgent-Switcher
+  # prevent firefox from opening in fullscreen when you restore with ctrl shift t
 
-  # https://www.reddit.com/r/imdb/comments/109gc27/is_there_any_working_method_to_hide_the_episodes/
-  # add to sytlus to fix netflix spoilters
-  /*
-  @-moz-document domain("www.netflix.com") {
-    span.duration:not(:hover), div.titleCard-title_index:not(:hover)  {
-        color: rgb(0, 0, 0);
-        background-color: rgb(0, 0, 0);
-    }
-  }
-  */
+  # switch to zen browser?
+  #  not until they add horizontal tabs
+  #  could use https://github.com/mmmintdesign/Zen-Mod-Forbidden-Horizontal-Tabs
+  #
+  #  can be run thrugh this flake
+  #  https://github.com/VCPYC/zen-browser-flake
 
   # possibly might disable the restore screen
   # browser.sessionstore.resume_from_crash
+
+  # setting "full-screen-api.ignore-widgets" to true
+  # allows for psudo-fullscreen where it doesn't actually full screen it
+  # https://superuser.com/a/1742237
+
   config = mkIf cfg.enable {
     home.sessionVariables = {
       BROWSER = "firefox";
     };
+
+    home.file.".local/share/applications/firefox-base.desktop".text = ''
+      [Desktop Entry]
+      Categories=Network;WebBrowser
+      Exec=firefox --name "firefox base" -P "base" %U
+      GenericName=Web Browser
+      Icon=firefox
+      Name=Firefox Base
+      StartupNotify=true
+      StartupWMClass=firefox
+      Terminal=false
+      Type=Application
+    '';
 
     programs.firefox = rec {
       enable = true;
@@ -109,10 +122,7 @@ in {
           devtools.debugger.remote-enabled
           */
           # Custom CSS style options
-          # TODO: remove most of the colourful colors from this
-          # / standardise them, i dont need one color per button
 
-          # TODO: fix the color / form of the tabs
           userChrome = cssColors + builtins.readFile ./userChrome.css;
           userContent = cssColors + builtins.readFile ./userContent.css;
 
@@ -201,7 +211,6 @@ in {
                 "repo:upidapi/NixOs";
 
               # "Wikipedia (en)".metaData.alias = "@wiki";
-              # "Google".metaData.hidden = true;
               "Google".metaData.hidden = true;
               "Amazon.com".metaData.hidden = true;
               "Bing".metaData.hidden = true;
@@ -217,31 +226,36 @@ in {
             # vim binds for the browser
             vimium
 
-            ublock-origin
+            # react-devtools
 
             # un clickbait youtube
-            dearrow
-            sponsorblock
-            return-youtube-dislikes
+            # dearrow
+            # sponsorblock
+            # return-youtube-dislikes
 
             # qol
             refined-github
             i-dont-care-about-cookies
             darkreader
 
-            react-devtools
-
-            stylus # the config is in stylus.json
+            # all you can do with this can be exported and placed in userContent.css
+            # so it's used to quickly iterate before placing it in there
+            # since you cant config extensions declaratively
+            stylus
 
             # privacy
             # https-everywhere  # not on system
+            user-agent-string-switcher
+            ublock-origin
             clearurls
-            disconnect
-            decentraleyes
-            duckduckgo-privacy-essentials
+            decentraleyes # local cdn
+            # privacy-redirect
+
+            # unnecessary with ubo
+            # duckduckgo-privacy-essentials
+            # disconnect
             # ghostery
             # privacy-badger
-            # privacy-redirect
 
             buster-captcha-solver
           ];
@@ -291,7 +305,7 @@ in {
             "browser.quitShortcut.disabled" = true;
             "browser.shell.checkDefaultBrowser" = false;
             "browser.ssb.enabled" = true;
-            "browser.toolbars.bookmarks.visibility" = "always";
+            "browser.toolbars.bookmarks.visibility" = "never";
             "browser.urlbar.placeholderName" = "DuckDuckGo";
             "browser.urlbar.suggest.openpage" = false;
             "datareporting.policy.dataSubmissionEnable" = false;
@@ -320,10 +334,9 @@ in {
 
             "browser.newtabpage.activity-stream.feeds.topsites" = true;
             "browser.newtabpage.pinned" = [
-              {url = "https://yewtu.be/";}
+              {url = "https://po2punkt0.kattis.com/";}
               {url = "https://github.com/";}
               {url = "https://noogle.dev/";}
-              {url = "https://search.nixos.org/packages";}
               {url = "https://www.samskolan.se/login/";}
             ];
           };
