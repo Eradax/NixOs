@@ -94,6 +94,7 @@
                     requests
                     pwntools
                     pillow
+                    sympy
                   ]
               ))
             ]);
