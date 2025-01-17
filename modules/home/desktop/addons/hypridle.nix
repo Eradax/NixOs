@@ -1,5 +1,4 @@
-# based on / taken from
-# https://github.com/notohh/snowflake/blob/master/home/wayland/programs/hyprlock.nix
+# REF: https://github.com/notohh/snowflake/blob/master/home/wayland/programs/hyprlock.nix
 {
   config,
   my_lib,
@@ -17,7 +16,6 @@ in {
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland.settings = {
       exec-once = [
-        "hypridle"
         # don't idle while playing audio
         "sway-audio-idle-inhibit"
       ];
@@ -40,20 +38,20 @@ in {
           # I'm unsure when this is used but its probably called
           # when the lid is closed
           # avoid starting multiple hyprlock instances.
-          lock_cmd = "pidof hyprlock || hyprlock";
+          lock_cmd = "pidof hyprlock || hyprlock --immediate --immediate-render --no-fade-in";
           # whether to ignore dbus-sent idle inhibit events (e.g. from firefox)
           ignore_dbus_inhibit = false;
         };
 
         listener = [
           {
-            timeout = 300;
+            timeout = 60 * 5;
             on-timeout = "hyprctl dispatch dpms off";
             on-resume = "hyprctl dispatch dpms on";
           }
           {
-            timeout = 330;
-            on-timeout = "pidof hyprlock || hyprlock --immediate --immediate-render";
+            timeout = 60 * 5.5;
+            on-timeout = "pidof hyprlock || hyprlock --immediate --immediate-render --no-fade-in";
           }
           {
             timeout = 60 * 30;
