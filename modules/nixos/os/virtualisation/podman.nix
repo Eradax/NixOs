@@ -38,7 +38,7 @@ in {
       ];
 
       oci-containers.backend = "podman";
-      docker.enable = false;
+      docker.enable = true;
 
       podman = {
         enable = true;
