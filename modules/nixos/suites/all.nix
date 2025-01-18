@@ -74,7 +74,7 @@ in {
         };
 
         virtualisation = {
-          # podman = enable; # FIXME: podman is broken rn
+          podman = enable;
           # vfio = enable;
           qemu = enable;
           # waydroid = enable;

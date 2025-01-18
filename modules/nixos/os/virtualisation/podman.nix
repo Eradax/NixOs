@@ -26,7 +26,7 @@ in {
 
     # TODO: only enable if drivers are present?
     # builtins.any (driver: driver == "nvidia") config.services.xserver.videoDrivers;
-    hardware.nvidia-container-toolkit = enable;
+    # hardware.nvidia-container-toolkit = enable;
 
     virtualisation = {
       # Registries to search for images on `podman pull`
@@ -38,7 +38,7 @@ in {
       ];
 
       oci-containers.backend = "podman";
-      docker.enable = true;
+      docker.enable = false;
 
       podman = {
         enable = true;
