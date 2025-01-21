@@ -73,7 +73,7 @@
               gdb
               gef
               # EXPLORE: apktool and android rev in general
-              ghidra
+              # BROKEN: ghidra
               radare2
 
               strace
