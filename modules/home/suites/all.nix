@@ -40,7 +40,8 @@ in {
         clr-pckr = enable;
         keepassxc = enable;
         # nushell = enable;
-        nvf = enable;
+        # nvf = enable;
+        # neovim = enable;
         bat = enable;
         cn-bth = enable;
         direnv = enable;

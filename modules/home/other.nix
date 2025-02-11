@@ -94,6 +94,8 @@ in {
 
         # hehe
         sl
+
+        kitty
       ]);
   };
 }

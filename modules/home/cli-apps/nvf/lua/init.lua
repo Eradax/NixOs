@@ -20,7 +20,7 @@ local modules = {
     "lua.plugins.todo-comments", -- has to be after telescope
     "lua.plugins.cell-auto",
     "lua.plugins.dap",
-    "lua.plugins.image",
+    "lua.plugins.image", -- FIXME: 02/11 borken
     "lua.plugins.luasnip",
     "lua.plugins.neorg",
     "lua.plugins.toggleterm",

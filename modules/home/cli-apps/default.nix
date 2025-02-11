@@ -3,7 +3,8 @@
     ./clr-pckr
     ./keepassxc
     ./nushell
-    ./nvf
+    # ./nvf
+    # ./neovim
     ./bat.nix
     ./cn-bth.nix
     ./direnv.nix
