@@ -24,7 +24,7 @@ in {
         firefox = enable;
         alacritty = enable;
         anki = enable;
-        bitwarden = enable;
+        # bitwarden = enable;
         inkscape = enable;
         # mathematica = enable;
         r2modman = enable;
