@@ -4,7 +4,7 @@
     ./keepassxc
     ./nushell
     # ./nvf
-    # ./neovim
+    ./neovim
     ./bat.nix
     ./cn-bth.nix
     ./direnv.nix

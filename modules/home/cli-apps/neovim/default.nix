@@ -125,7 +125,7 @@ in {
         clang-tools
         gdb
         lldb
-        vscode-extensions.vadimcn.vscode-lldb.adapter # codelldb - debugger
+        # vscode-extensions.vadimcn.vscode-lldb.adapter # codelldb - debugger # FIXME: borken
         python312Packages.six
 
         # markdown

@@ -27,6 +27,7 @@ in {
         # bitwarden = enable;
         inkscape = enable;
         # mathematica = enable;
+        vscode = enable;
         r2modman = enable;
         spotify = enable;
       };
@@ -41,7 +42,7 @@ in {
         keepassxc = enable;
         # nushell = enable;
         # nvf = enable;
-        # neovim = enable;
+        neovim = enable;
         bat = enable;
         cn-bth = enable;
         direnv = enable;

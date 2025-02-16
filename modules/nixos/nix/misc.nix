@@ -20,7 +20,10 @@ in {
   in
     mkIf cfg.enable {
       # Allow unfree packages
-      nixpkgs.config.allowUnfree = true;
+      nixpkgs = {
+        config.allowUnfree = true;
+        config.allowBroken = true;
+      };
 
       nix = {
         channel.enable = false;
