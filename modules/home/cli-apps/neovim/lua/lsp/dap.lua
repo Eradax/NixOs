@@ -11,12 +11,11 @@ for name, sign in pairs(require("lua.icons").dap) do
 end
 
 -- setup dap config by VsCode launch.json file
--- FIXME: borken
--- local vscode = require("dap.ext.vscode")
--- local json = require("plenary.json")
--- vscode.json_decode = function(str)
---     return vim.json.decode(json.json_strip_comments(str))
--- end
+local vscode = require("dap.ext.vscode")
+local json = require("plenary.json")
+vscode.json_decode = function(str)
+    return vim.json.decode(json.json_strip_comments(str))
+end
 
 vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
 

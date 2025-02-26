@@ -22,7 +22,6 @@ in {
       # Allow unfree packages
       nixpkgs = {
         config.allowUnfree = true;
-        config.allowBroken = true;
       };
 
       nix = {

@@ -20,6 +20,11 @@ in {
   options.modules.home.cli-apps.neovim =
     mkEnableOpt "enables my neovim config";
 
+  # you can run it with
+  # >>> nix run /persist/nixos#mnw -- file.txt
+  # or as a env
+  # >>> nix develop /persist/nixos#mnw -c bash -c "nvim file.txt; exit"
+
   config = mkIf cfg.enable {
     home.sessionVariables = {EDITOR = "nvim";};
 
@@ -108,6 +113,10 @@ in {
         golangci-lint
         gopls
 
+        # sql
+        sqls
+        sqlfluff
+
         # java
         java-language-server
         google-java-format
@@ -125,7 +134,7 @@ in {
         clang-tools
         gdb
         lldb
-        # vscode-extensions.vadimcn.vscode-lldb.adapter # codelldb - debugger # FIXME: borken
+        vscode-extensions.vadimcn.vscode-lldb.adapter # codelldb - debugger
         python312Packages.six
 
         # markdown
@@ -158,17 +167,18 @@ in {
       ];
 
       extraLuaPackages = ps:
-        with ps; [
-          magick # for image nvim
-
+        (with ps; [
           # for neorg
           lua-utils-nvim
           pathlib-nvim
 
           cjson
-        ];
+        ])
+        ++ (with pkgs.luajitPackages; [
+          magick # for image nvim
+        ]);
 
-      # nix-shell -p vimPlugins.nvim-treesitter-parsers
+      # nix-shell -p vimPlugins.nvim-treesitter-parsers.
       plugins = with pkgs.vimPlugins; [
         (nvim-treesitter.withPlugins (
           parsers:
@@ -185,6 +195,8 @@ in {
               c
               cpp
               rust
+
+              sql
 
               norg
               markdown
@@ -227,17 +239,17 @@ in {
         # image-nvim
         # TODO: switch bask to the "image-nvim" pkgs when my pr merges
         #  https://github.com/3rd/image.nvim/pull/266
-        (pkgs.neovimUtils.buildNeovimPlugin {
-          pname = "image.nvim";
-          version = "2024-11-10";
-          src = pkgs.fetchFromGitHub {
-            owner = "upidapi";
-            repo = "image.nvim";
-            rev = "6915dd057ed8a29d09db8495b8746a54073b028d";
-            sha256 = "sha256-SgTr0AhlPMmGDKAFpaL+W/nK6zLmh/s+wGD5XcaMFyo=";
-          };
-          meta.homepage = "https://github.com/3rd/image.nvim/";
-        })
+        # (pkgs.neovimUtils.buildNeovimPlugin {
+        #   pname = "image.nvim";
+        #   version = "2024-11-10";
+        #   src = pkgs.fetchFromGitHub {
+        #     owner = "upidapi";
+        #     repo = "image.nvim";
+        #     rev = "6915dd057ed8a29d09db8495b8746a54073b028d";
+        #     sha256 = "sha256-SgTr0AhlPMmGDKAFpaL+W/nK6zLmh/s+wGD5XcaMFyo=";
+        #   };
+        #   meta.homepage = "https://github.com/3rd/image.nvim/";
+        # })
 
         # (buildNeovimPlugin {
         #   pname = "image.nvim";
@@ -250,6 +262,33 @@ in {
         #   };
         #   meta.homepage = "https://github.com/3rd/image.nvim/";
         # })
+
+        (pkgs.lua.pkgs.buildLuarocksPackage {
+          pname = "image.nvim";
+          version = "2024-11-10";
+          knownRockspec =
+            (pkgs.fetchurl {
+              url = "mirror://luarocks/image.nvim-1.3.0-1.rockspec";
+              sha256 = "1ls3v5xcgmqmscqk5prpj0q9sy0946rfb2dfva5f1axb5x4jbvj9";
+            })
+            .outPath;
+
+          src = pkgs.fetchFromGitHub {
+            owner = "upidapi";
+            repo = "image.nvim";
+            rev = "6915dd057ed8a29d09db8495b8746a54073b028d";
+            sha256 = "sha256-SgTr0AhlPMmGDKAFpaL+W/nK6zLmh/s+wGD5XcaMFyo=";
+          };
+
+          # pkgs.fetchzip {
+          #   url = "https://github.com/3rd/image.nvim/archive/v1.3.0.zip";
+          #   sha256 = "0fbc3wvzsck8bbz8jz5piy68w1xmq5cnhaj1lw91d8hkyjryrznr";
+          # };
+
+          disabled = pkgs.lua.pkgs.luaOlder "5.1";
+          propagatedBuildInputs = [pkgs.luajitPackages.magick];
+        })
+
         (pkgs.vimUtils.buildVimPlugin {
           name = "img-clip";
           src = inputs.plugin-img-clip;
