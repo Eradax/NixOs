@@ -2,6 +2,7 @@
   osConfig,
   config,
   lib,
+  pkgs,
   my_lib,
   ...
 }: let
@@ -13,6 +14,10 @@ in {
     mkEnableOpt "Whether or not to add git";
 
   config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      git-lfs
+    ];
+
     programs.git = {
       enable = true;
       # TODO: Maybe use gpg instead of ssh

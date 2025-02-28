@@ -50,7 +50,7 @@
             '';
             targetPkgs = _pkgs: (with _pkgs; [
               # crypto
-              sage
+              # BROKEN: (2025-02-28) sage
 
               # forensics
               imhex
