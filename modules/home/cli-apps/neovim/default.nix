@@ -39,8 +39,7 @@ in {
       withPython3 = true;
       withRuby = false;
 
-      viAlias = false;
-      vimAlias = false;
+      aliases = [];
 
       initLua = let
         additionalRuntimePaths = [
