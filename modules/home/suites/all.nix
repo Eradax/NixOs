@@ -39,7 +39,7 @@ in {
       #    tools/
       cli-apps = {
         clr-pckr = enable;
-        keepassxc = enable;
+        # keepassxc = enable;
         # nushell = enable;
         neovim = enable;
         bat = enable;

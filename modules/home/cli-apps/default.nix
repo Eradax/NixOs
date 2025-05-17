@@ -1,7 +1,7 @@
 {
   imports = [
     ./clr-pckr
-    ./keepassxc
+    # ./keepassxc
     ./nushell
     ./neovim
     ./bat.nix
