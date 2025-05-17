@@ -124,7 +124,7 @@ in {
         # php
         phpactor
         php # includes the linter
-        php.packages.php-cs-fixer
+        # broken php.packages.php-cs-fixer
 
         # c#
         csharp-ls
