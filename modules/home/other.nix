@@ -75,7 +75,7 @@ in {
         rustc
 
         # for formatting a multiple iso usb
-        ventoy
+        # ventoy broken
 
         # find out what process is using a file
         lsof
